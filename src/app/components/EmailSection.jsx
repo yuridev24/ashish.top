@@ -114,7 +114,7 @@ export const EmailSection = () => {
           </button>
           {emailSubmitted && (
             <p className="text-red-500 text-sm mt-2">
-              Email part hasn't been implemented yet, sorry!
+              Email part hasn&apos;t been implemented yet, sorry!
             </p>
           )}
         </form>
