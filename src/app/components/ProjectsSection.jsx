@@ -1,0 +1,143 @@
+"use client";
+
+import React, { useState, useRef } from "react";
+import { ProjectTag } from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
+import { ProjectsCard } from "./ProjectsCard";
+
+const projectsData = [
+  {
+    id: 1,
+    title: "React Portfolio Website",
+    description:
+      "This is my first project I built with Next.js. I watched a tutorial on youtube for this!",
+    image: "/images/projects/1.png",
+    tag: ["All", "Web"],
+    gitUrl: "/",
+    previewUrl: "#home",
+  },
+  {
+    id: 2,
+    title: "FreeGPT.js",
+    description:
+      "A secure, FREE (with no token/auth) API for ChatGPT! Only works on client-side JavaScript...",
+    image: "/images/projects/3.png",
+    tag: ["All", "Web", "Back-end", "API"],
+    gitUrl: "https://github.com/ashishagarwal2023/freegptjs",
+    previewUrl: "https://freegpt.js.org",
+  },
+  {
+    id: 3,
+    title: "FreeGPT API",
+    description: "A simple flask API so you can make a GPT Bot",
+    image: "/images/projects/2.png",
+    tag: ["All", "Back-end", "API"],
+    gitUrl: "https://github.com/ashishagarwal2023/freegpt",
+    previewUrl: "https://github.com/ashishagarwal2023/freegpt",
+  },
+  {
+    id: 4,
+    title: "CutYourURL",
+    description:
+      "A advanced Bitly URL Shortener Clone with features like custom URL, reCAPTCHA, limited clicks, expire automatically and more! Built with Flask!",
+    image: "/images/projects/4.png",
+    tag: ["All", "Web", "Back-end"],
+    gitUrl: "https://github.com/ashishagarwal2023/CutYourURL",
+    previewUrl: "https://cutyoururl.tech",
+  },
+  {
+    id: 5,
+    title: "Free WindowsActivator",
+    description:
+      "Simple Python Project to activate windows. It still works for 7-11!",
+    image: "/images/projects/5.png",
+    tag: ["All"],
+    gitUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
+    previewUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
+  },
+  {
+    id: 6,
+    title: "CutYourURL Website",
+    description:
+      "A website (is not complete yet) for the CutYourURL Project, in Svelte+TailwindCSS.",
+    image: "/images/projects/6.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/ashishagarwal2023/CutYourURLWebsite",
+    previewUrl: "https://cutyour-url.netlify.app/",
+  },
+];
+
+export const ProjectsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [tag, setTag] = useState("All");
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  const cardVariants = {
+    initial: { y: 50, opacity: 0, transform: "rotate(10deg)" },
+    animate: { y: 0, opacity: 1, transform: "rotate(0deg)" },
+  };
+
+  return (
+    <section id="projects">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+        My Projects
+      </h2>
+      <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
+        <ProjectTag
+          name="All"
+          onClick={handleTagChange}
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          name="Web"
+          onClick={handleTagChange}
+          isSelected={tag === "Web"}
+        />
+        <ProjectTag
+          name="Back-end"
+          onClick={handleTagChange}
+          isSelected={tag === "Back-end"}
+        />
+        <ProjectTag
+          name="API"
+          onClick={handleTagChange}
+          isSelected={tag === "API"}
+        />
+        <ProjectTag
+          name="Contributed"
+          onClick={handleTagChange}
+          isSelected={tag === "Contributed"}
+        />
+      </div>
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            key={index}
+            transition={{ duration: 0.3, delay: index * 0.2 }}
+          >
+            <ProjectsCard
+              key={project.id}
+              title={project.title}
+              desc={project.description}
+              imgUrl={project.image}
+              tags={project.tag}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
+        ))}
+      </ul>
+    </section>
+  );
+};
