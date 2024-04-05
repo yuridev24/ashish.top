@@ -4,11 +4,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GithubIcon from "../../../public/github-icon.svg";
+import { CogIcon } from "@heroicons/react/24/outline";
 
 export const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
    async function handleSubmit(e) {
      e.preventDefault();
+     setIsButtonDisabled(true);
      const response = await fetch("https://api.web3forms.com/submit", {
        method: "POST",
        headers: {
@@ -26,6 +29,7 @@ export const EmailSection = () => {
      const result = await response.json();
      if (result.success) {
        setEmailSubmitted(true);
+       setIsButtonDisabled(false);
      }
    }
   return (
@@ -44,7 +48,8 @@ export const EmailSection = () => {
         </p>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           <i>
-            If you cannot send email through the form, feel free to email me (this form is on a monthly limit, so it might not work at all).
+            If you cannot send email through the form, feel free to email me
+            (this form is on a monthly limit, so it might not work at all).
           </i>
         </p>
         <div className="socials flex flex-row gap-2">
@@ -57,86 +62,97 @@ export const EmailSection = () => {
         </div>
       </div>
       <div>
-          {emailSubmitted ? (
-            
-            <form className="flex flex-col" onSubmit={handleSubmit}>          
+        {emailSubmitted ? (
+          <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="mb-6">
-            <p className="text-green-500 text-sm mt-2">
-              Thank you for your email! I will get back to you soon.
-            </p>
+              <p className="text-green-500 text-sm mt-2">
+                Thank you for your email! I will get back to you soon.
+              </p>
             </div>
-            </form>
-
-          ) : (
-            <form className="flex flex-col" onSubmit={handleSubmit}>          
-              <div className="mb-6">
-      <label
-              htmlFor="email"
-              className="text-white block text-sm font-medium mb-2"
-            >
-              Your email
-            </label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
-              required
-              placeholder="hello@ashishagr.is-a.dev"
-            />
-          </div>
-          <div className="mb-6">
-      <label
-              htmlFor="name"
-              className="text-white block text-sm font-medium mb-2"
-            >
-              Your name
-            </label>
-            <input
-              name="name"
-              type="text"
-              id="name"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
-              required
-              placeholder="Ashish Agarwal"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="subject"
-              className="text-white block text-sm font-medium mb-2"
-            >
-              Subject
-            </label>
-            <input
-              name="subject"
-              type="text"
-              id="subject"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
-              required
-              placeholder="Just saying hi"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="message"
-              className="text-white block text-sm mb-2 font-medium"
-            ></label>
-            <textarea
-              name="message"
-              id="message"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
-              placeholder="Let's talk about..."
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-          >
-            Submit
-          </button>
           </form>
-          )}
+        ) : (
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="text-white block text-sm font-medium mb-2"
+              >
+                Your email
+              </label>
+              <input
+                name="email"
+                type="email"
+                id="email"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                required
+                placeholder="hello@ashishagr.is-a.dev"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="name"
+                className="text-white block text-sm font-medium mb-2"
+              >
+                Your name
+              </label>
+              <input
+                name="name"
+                type="text"
+                id="name"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                required
+                placeholder="Ashish Agarwal"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="subject"
+                className="text-white block text-sm font-medium mb-2"
+              >
+                Subject
+              </label>
+              <input
+                name="subject"
+                type="text"
+                id="subject"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                required
+                placeholder="Just saying hi"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="text-white block text-sm mb-2 font-medium"
+              ></label>
+              <textarea
+                name="message"
+                id="message"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                placeholder="Let's talk about..."
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              disabled={isButtonDisabled}
+            >
+              {isButtonDisabled ? (
+                <CogIcon className="animate-spin h-5 w-5 mx-auto" />
+              ) : (
+                "Submit"
+              )}
+            </button>
+{/* 
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              disabled={isButtonDisabled}
+            >
+              Submit
+            </button> */}
+          </form>
+        )}
       </div>
     </section>
   );
