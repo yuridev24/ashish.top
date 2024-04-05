@@ -74,12 +74,13 @@ export const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full w-full overflow-auto">
           <h2 className="text-4xl font-bold text-white mb-4 ">About Me</h2>
           <p className="text-base lg:text-lg">
-            Hi, I'm a full-stack developer with a passion for creating interactive
-            and responsive web applications. I have experience working with
-            JavaScript, React, Node.js, HTML, CSS, Python, Git and more
-            frameworks, languages and libraries. I am a quick learner and I am
-            always looking to expand my knowledge and skill set. I work as a
-            freelancer and open-source. Additionally, I've wrote several books too!
+            Hi, I&apos;m a full-stack developer with a passion for creating
+            interactive and responsive web applications. I have experience
+            working with JavaScript, React, Node.js, HTML, CSS, Python, Git and
+            more frameworks, languages and libraries. I am a quick learner and I
+            am always looking to expand my knowledge and skill set. I work as a
+            freelancer and open-source. Additionally, I&apos;ve wrote several
+            books too!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
