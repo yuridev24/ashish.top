@@ -47,7 +47,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-thin">
+           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400]">
             Open-source freelancer, programmer from <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">India</span>. Has a vast of knowledge in languages like JavaScript, Python, R, SQL, HTML, CSS & Node.js. Experienced with frameworks like Django and Flask with experience in WordPress and also experienced with libraries like Bootstrap, TailwindCSS and jQuery, with tools like Git, Prettier, and a lot more. <strong>Scroll down to continue!</strong>
           </p>
         </motion.div>
