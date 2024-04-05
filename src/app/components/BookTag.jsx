@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ProjectTag = ({ name, onClick, isSelected }) => {
+export const BookTag = ({ name, onClick, isSelected }) => {
   const buttonStyles = isSelected
     ? "border-primary-500 text-white bg-gradient-to-r from-primary-500  via-primary-450 to-primary-500"
     : "text-[#ADB7BE] border-slate-600 hover:border-white";

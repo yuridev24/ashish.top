@@ -7,6 +7,7 @@ import { EmailSection } from "./components/EmailSection";
 import { Footer } from "./components/Footer";
 import { AchievementsSection } from "./components/AchievementsSection";
 import { SubscSection } from "./components/SubscSection";
+import { BooksSection } from "./components/BooksSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <HeroSection />
         <AchievementsSection />
         <AboutSection />
+        <BooksSection />
         <ProjectsSection />
         <SubscSection />
         <EmailSection />

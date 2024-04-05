@@ -10,15 +10,17 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2 grid grid-cols-2">
-        <li>Node.js</li>
-        <li>React</li>
-        <li>SQL/SQLite</li>
-        <li>HTML/CSS</li>
+      <ul className="list-disc pl-2 grid grid-cols-2 list-numbers">
+        <li>Node.js & React</li>
+        <li>MySQL & R</li>
+        <li>R Markdown</li>
         <li>JavaScript</li>
+        <li>HTML & CSS</li>
         <li>Python</li>
-        <li>R</li>
-        <li>Django/Flask</li>
+        <li>Django & Flask</li>
+        <li>jQuery</li>
+        <li>WordPress, Markdown</li>
+        <li>Bootstrap & TailwindCSS</li>
       </ul>
     ),
   },
@@ -72,12 +74,12 @@ export const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full w-full overflow-auto">
           <h2 className="text-4xl font-bold text-white mb-4 ">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full-stack developer with a passion for creating interactive
+            Hi, I'm a full-stack developer with a passion for creating interactive
             and responsive web applications. I have experience working with
             JavaScript, React, Node.js, HTML, CSS, Python, Git and more
             frameworks, languages and libraries. I am a quick learner and I am
             always looking to expand my knowledge and skill set. I work as a
-            freelancer and open-source, for free!
+            freelancer and open-source. Additionally, I've wrote several books too!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

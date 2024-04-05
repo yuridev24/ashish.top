@@ -16,11 +16,6 @@ const achievementsList = [
     postfix: "+",
   },
   {
-    postfix: "+",
-    metric: "Lines of Code",
-    value: "500000",
-  },
-  {
     metric: "Courses Done",
     value: "30",
     postfix: "+",
@@ -30,6 +25,11 @@ const achievementsList = [
     value: "4",
     postfix: "+",
   },
+  {
+    metric: "Authored Books",
+    value: "10",
+    prefix: "~"
+  }
 ];
 
 export const AchievementsSection = () => {

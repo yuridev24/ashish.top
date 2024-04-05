@@ -5,6 +5,8 @@ import { ProjectTag } from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 import { ProjectsCard } from "./ProjectsCard";
 
+const projectTags = ["All", "Web", "Back-end", "API", "Contributed"];
+
 const projectsData = [
   {
     id: 1,
@@ -13,44 +15,35 @@ const projectsData = [
       "This is my first project I built with Next.js. I watched a tutorial on youtube for this!",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "#home",
+    gitUrl: "https://github.com/ashishagarwal2023/portfolio",
+    previewUrl: "https://ashishagarwal2023.vercel.app/",
   },
   {
     id: 2,
     title: "FreeGPT.js",
     description:
       "A secure, FREE (with no token/auth) API for ChatGPT! Only works on client-side JavaScript...",
-    image: "/images/projects/3.png",
+    image: "/images/projects/2.png",
     tag: ["All", "Web", "Back-end", "API"],
     gitUrl: "https://github.com/ashishagarwal2023/freegptjs",
     previewUrl: "https://freegpt.js.org",
   },
   {
     id: 3,
-    title: "FreeGPT API",
-    description: "A simple flask API so you can make a GPT Bot",
-    image: "/images/projects/2.png",
-    tag: ["All", "Back-end", "API"],
-    gitUrl: "https://github.com/ashishagarwal2023/freegpt",
-    previewUrl: "https://github.com/ashishagarwal2023/freegpt",
-  },
-  {
-    id: 4,
     title: "CutYourURL",
     description:
       "A advanced Bitly URL Shortener Clone with features like custom URL, reCAPTCHA, limited clicks, expire automatically and more! Built with Flask!",
-    image: "/images/projects/4.png",
+    image: "/images/projects/3.png",
     tag: ["All", "Web", "Back-end"],
     gitUrl: "https://github.com/ashishagarwal2023/CutYourURL",
     previewUrl: "https://cutyoururl.tech",
   },
   {
-    id: 5,
+    id: 4,
     title: "Free WindowsActivator",
     description:
       "Simple Python Project to activate windows. It still works for 7-11!",
-    image: "/images/projects/5.png",
+    image: "/images/projects/4.png",
     tag: ["All"],
     gitUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
     previewUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
@@ -60,7 +53,7 @@ const projectsData = [
     title: "CutYourURL Website",
     description:
       "A website (is not complete yet) for the CutYourURL Project, in Svelte+TailwindCSS.",
-    image: "/images/projects/6.png",
+    image: "/images/projects/5.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/ashishagarwal2023/CutYourURLWebsite",
     previewUrl: "https://cutyour-url.netlify.app/",
@@ -91,31 +84,13 @@ export const ProjectsSection = () => {
         My Projects
       </h2>
       <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
-        <ProjectTag
-          name="All"
+        {projectTags.map((tagName, index) => (
+          <ProjectTag
+          name={tagName}
           onClick={handleTagChange}
-          isSelected={tag === "All"}
+          isSelected={tag === tagName}
         />
-        <ProjectTag
-          name="Web"
-          onClick={handleTagChange}
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          name="Back-end"
-          onClick={handleTagChange}
-          isSelected={tag === "Back-end"}
-        />
-        <ProjectTag
-          name="API"
-          onClick={handleTagChange}
-          isSelected={tag === "API"}
-        />
-        <ProjectTag
-          name="Contributed"
-          onClick={handleTagChange}
-          isSelected={tag === "Contributed"}
-        />
+        ))}
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
