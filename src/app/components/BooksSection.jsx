@@ -126,6 +126,7 @@ export const BooksSection = () => {
       <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
         {bookTags.map((tagName, index) => (
           <BookTag
+            key={index}
             name={tagName}
             onClick={handleTagChange}
             isSelected={tag === tagName}

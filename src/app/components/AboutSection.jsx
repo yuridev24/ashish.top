@@ -68,6 +68,7 @@ export const AboutSection = () => {
         <Image
           src="/images/about-image.png"
           width={500}
+          alt="About Me Image"
           height={500}
           className="rounded-lg"
         />
