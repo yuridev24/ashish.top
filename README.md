@@ -1,10 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next.js Portfolio with Contact Form
+This is my portfolio I built using NextJS. For this, I used several libraries. The form depends on Web3Forms because it was the free one to me (althought it has limits).
 
-_My first Next.js project I made, I watched a yt tutorial for this :)_
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, get a Web3Forms token at [here](https://web3forms.com/)
+
+Then, make file `.env.local` in the root of project, with TOKEN as your token.
+```env
+TOKEN=YOUR_WEB3FORM_TOKEN
+```
+
+Then, install packages
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
