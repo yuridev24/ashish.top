@@ -9,7 +9,7 @@ First, get a Web3Forms token at [here](https://web3forms.com/)
 
 Then, make file `.env.local` in the root of project, with TOKEN as your token.
 ```env
-TOKEN=YOUR_WEB3FORM_TOKEN
+NEXT_PUBLIC_TOKEN=YOUR_WEB3FORM_TOKEN
 ```
 
 Then, install packages
