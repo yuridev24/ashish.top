@@ -8,29 +8,26 @@ import GithubIcon from "../../../public/github-icon.svg";
 
 export const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    if (response.status === 200) {
-      setEmailSubmitted(true);
-    }
-  };
+   async function handleSubmit(e) {
+     e.preventDefault();
+     const response = await fetch("https://api.web3forms.com/submit", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+       },
+       body: JSON.stringify({
+         access_key: process.env.TOKEN,
+         name: e.target.name.value,
+         email: e.target.email.value,
+         message: e.target.message.value,
+       }),
+     });
+     const result = await response.json();
+     if (result.success) {
+       setEmailSubmitted(true);
+     }
+   }
   return (
     <section
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
@@ -47,8 +44,7 @@ export const EmailSection = () => {
         </p>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           <i>
-            Note: the contact form needs to be fixed yet, you can email me
-            instead for any questions.
+            If you cannot send email through the form, feel free to email me (this form is on a monthly limit, so it might not work at all).
           </i>
         </p>
         <div className="socials flex flex-row gap-2">
@@ -75,7 +71,7 @@ export const EmailSection = () => {
               id="email"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
               required
-              placeholder="code.with.aasheesh@gmail.com"
+              placeholder="hello@ashishagr.is-a.dev"
             />
           </div>
           <div className="mb-6">

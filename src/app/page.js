@@ -6,7 +6,6 @@ import { ProjectsSection } from "./components/ProjectsSection";
 import { EmailSection } from "./components/EmailSection";
 import { Footer } from "./components/Footer";
 import { AchievementsSection } from "./components/AchievementsSection";
-import { SubscSection } from "./components/SubscSection";
 import { BooksSection } from "./components/BooksSection";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <AboutSection />
         <BooksSection />
         <ProjectsSection />
-        <SubscSection />
         <EmailSection />
       </div>
       <Footer />
