@@ -16,6 +16,17 @@ const bookTags = [
 
 const booksData = [
   {
+    id: 8,
+    name: "Building Web Apps with Python",
+    description:
+      "In this book you will learn several topics about developing web apps with Python using the flask module. You will not just learn how to build apps but also how to protect from XSS attacks and such chapters. You will also learn to build some web apps with Python at the end. By the end of this book, you will be able to build your own, interactive web apps with Python.",
+    tag: ["All", "Python", "Web Dev"],
+    preview:
+      "https://www.google.co.in/books/edition/Building_Web_Apps_with_Python/Ttj_EAAAQBAJ?hl=enhttps://books.google.co.in/books?id=Ttj_EAAAQBAJ&newbks=0&printsec=frontcover&pg=PA88&dq=Ashish+Agarwal+building+web+apps+with+python&hl=en&source=newbks_fb&redir_esc=y",
+    buy: "https://play.google.com/store/books/details?id=Ttj_EAAAQBAJ",
+    cover: "/images/books/8.png"
+  },
+  {
     id: 7,
     name: "Microsoft Word A Junior&apos;s Guide",
     description:
