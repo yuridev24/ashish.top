@@ -1,4 +1,4 @@
-## Next.js Portfolio with Contact Form
+## Next.js Portfolio
 This is my portfolio I built using NextJS. For this, I used several libraries. The form depends on Web3Forms because it was the free one to me (althought it has limits).
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
