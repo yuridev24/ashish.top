@@ -34,19 +34,6 @@ const TAB_DATA = [
       </ul>
     ),
   },
-  {
-    title: "PC Build",
-    id: "os",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Model: Dell Vostro 2520</li>
-        <li>RAM: 2 + 10GB</li>
-        <li>OS: Windows 11 + Ubuntu (was Windows 7)</li>
-        <li>Storage: 512GB SSD (was HDD)</li>
-        <li>Old: 10+ Years</li>
-      </ul>
-    ),
-  },
 ];
 
 export const AboutSection = () => {
@@ -97,13 +84,6 @@ export const AboutSection = () => {
             >
               {" "}
               Certificates{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("os")}
-              active={tab === "os"}
-            >
-              {" "}
-              PC Build{" "}
             </TabButton>
           </div>
           <div className="mt-8">
