@@ -8,7 +8,7 @@ export const BooksCard = ({ cover, name, desc, preview, buy }) => {
     <div>
       <div
         style={{ background: `url(${cover})`, backgroundSize: "cover" }}
-        className="h-52 md:h-72 rounded-t-xl relative group"
+        className="h-[400px] rounded-t-xl relative group"
       >
         <div className="items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80">
           <Link

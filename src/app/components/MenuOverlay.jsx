@@ -1,16 +1,23 @@
-import React from 'react';
-import NavLink from './NavLink';
+"use client";
 
-const MenuOverlay = ({ links }) => {
+import NavLink from "./NavLink";
+import { motion } from "framer-motion";
+
+const MenuOverlay = ({ links, action }) => {
   return (
-    <ul className="flex flex-col py-4 items-center">
+    <motion.ul
+      className="flex flex-col py-12 items-center z-[99] rounded-lg w-full"
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "100vh" }}
+      transition={{ duration: 1 }}
+    >
       {links.map((link, index) => (
-        <li key={index}>
-          <NavLink href={link.path} title={link.title} />
+        <li key={index} className="my-auto text-xl">
+          <NavLink href={link.path} title={link.title} onClick={action} />
         </li>
       ))}
-    </ul>
+    </motion.ul>
   );
-}
+};
 
-export default MenuOverlay
+export default MenuOverlay;
