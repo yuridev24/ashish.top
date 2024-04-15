@@ -11,6 +11,10 @@ const links = [
     path: "#about",
   },
   {
+    title: "Books",
+    path: "#books",
+  },
+  {
     title: "Projects",
     path: "#projects",
   },
