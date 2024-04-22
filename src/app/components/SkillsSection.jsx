@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 /* eslint-disable @next/next/no-img-element */
 export const SkillsSection = () => {
   const skills = [
@@ -105,9 +109,16 @@ export const SkillsSection = () => {
       </h2>
       <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {skills.map((skill, index) => (
-          <div
-            className="group hover:bg-blue-700 cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-[#0a0a0a] border border-[#171717]"
+          <motion.div
+            className={
+              `select-none group ` +
+              `hover:bg-gradient-to-r hover:from-secondary-500 hover:via-secondary-600 hover:to-secondary-500` +
+              ` cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-[#0a0a0a] border border-[#171717]`
+            }
             key={index}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 1 }}
+            transition={{ duration: 0.1 }}
           >
             <img
               className="h-auto w-8"
@@ -117,9 +128,11 @@ export const SkillsSection = () => {
             <p className="self-stretch w-[1px] bg-[#171717]"></p>
             <div className="group-hover:text-slate-100 w-full text-white">
               <p>{skill.name}</p>
-              <p className="text-[#737373] group-hover:text-slate-200 text-sm">{skill.type}</p>
+              <p className="text-[#737373] group-hover:text-slate-200 text-sm">
+                {skill.type}
+              </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
