@@ -4,13 +4,14 @@ import { useTransition, useState } from "react";
 import Image from "next/image";
 import { TabButton } from "./TabButton";
 import { motion } from "framer-motion";
+import { Skill } from "./Skill";
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2 grid grid-cols-2 list-numbers">
+      <ul className="list-disc pl-2 grid grid-cols-2 pt-8 list-numbers">
         <li>Node.js & React</li>
         <li>MySQL & R</li>
         <li>R Markdown</li>
@@ -28,9 +29,17 @@ const TAB_DATA = [
     title: "Certificates",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Google IT Support Professional Certificate</li>
-        <li>Google Data Analytics Professional Certificate</li>
+      <ul className="list-disc px-4 w-full py-4">
+        <Skill
+          name="Google IT Support Professional Certificate"
+          file="gitsupport.png"
+          type="Google IT Support Professional Certificate"
+        />
+        <Skill
+          name="Google Data Analytics Professional Certificate"
+          file="gitanalytics.png"
+          type="Google Data Analytics Professional Certificate"
+        />
       </ul>
     ),
   },
@@ -86,7 +95,7 @@ export const AboutSection = () => {
               Certificates{" "}
             </TabButton>
           </div>
-          <div className="mt-8">
+          <div>
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
