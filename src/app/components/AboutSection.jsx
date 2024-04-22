@@ -31,14 +31,14 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc px-4 w-full py-4">
         <Skill
-          name="Google IT Support Professional Certificate"
+          name="Google IT Support"
           file="gitsupport.png"
-          type="Google IT Support Professional Certificate"
+          type="Professional Certificate"
         />
         <Skill
-          name="Google Data Analytics Professional Certificate"
+          name="Google Data Analytics"
           file="gitanalytics.png"
-          type="Google Data Analytics Professional Certificate"
+          type="Professional Certificate"
         />
       </ul>
     ),
@@ -66,7 +66,7 @@ export const AboutSection = () => {
           width={500}
           alt="About Me Image"
           height={500}
-          className="rounded-lg"
+          className="rounded-lg transition hover:scale-105"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full w-full overflow-auto">
           <h2 className="text-4xl font-bold text-white mb-4 ">About Me</h2>

@@ -43,7 +43,7 @@ export const NavBar = () => {
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className={`text-xl md:text-4xl text-white font-semibold ${poppins.className}`}
+          className={`text-xl md:text-2xl text-transparent bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text font-semibold ${poppins.className}`}
           onClick={() => setNavbarOpen(false)}
         >
           Ashish Agarwal
