@@ -1,34 +1,55 @@
-import React from "react";
+"use client";
+
 import { BookOpenIcon } from "@heroicons/react/24/outline";
 import {ArrowDownTrayIcon} from "@heroicons/react/16/solid";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const BooksCard = ({ cover, name, desc, preview, buy }) => {
   return (
-    <div>
-      <div
-        style={{ background: `url(${cover})`, backgroundSize: "cover" }}
-        className="h-[400px] rounded-t-xl relative group"
+    <motion.div
+      className="p-0 m-0 transition w-full select-none"
+      initial={{ scale: "0" }}
+      animate={{ scale: "1" }}
+      whileHover={{ scale: "1.05" }}
+      whileTap={{scale: "0.97"}}
+      transition={{ duration: 0.1 }}
+    >
+      <Link
+        className="group block w-full bg-[#0a0a0a] hover:bg-primary-500"
+        href={preview}
+        target="_blank"
       >
-        <div className="items-center justify-center overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80">
-          <Link
-            href={preview}
-            className="mr-2 h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <BookOpenIcon className="w-10 h-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
-          <Link
-            href={buy}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <ArrowDownTrayIcon className="w-10 h-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
+        <img
+          className="aspect-auto w-full object-cover"
+          src={cover}
+          alt={name}
+        />
+        <div className="border border-[#171717] px-4 py-2 group-hover:border-primary-400">
+          <p className="text-md mb-0.5">{name}</p>
+          <p className="mb-1 text-sm text-[#737373] group-hover:text-white">
+            {desc}
+          </p>
+          <div className="my-2">
+            <div className="flex flex-row justify-between">
+              <Link
+                href={preview}
+                target="_blank"
+                className="text-primary-400 group-hover:bg-primary-800 rounded-full p-2 font-bold bg-primary-900"
+              >
+                <ArrowDownTrayIcon className="w-6 h-6 text-inherit" />
+              </Link>
+              <Link
+                href={buy}
+                target="_blank"
+                className="text-primary-400 group-hover:bg-primary-800 rounded-full p-2 font-bold bg-primary-900"
+              >
+                <BookOpenIcon className="w-6 h-6 text-inherit" />
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
-        <h5 className="font-xl font-semibold mb-2">{name}</h5>
-        <p className="text-[#ADB7BE]">{desc}</p>
-      </div>
-    </div>
+      </Link>
+    </motion.div>
   );
 };

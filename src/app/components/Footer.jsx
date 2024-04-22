@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const currentYear = new Date().getFullYear();
@@ -31,12 +32,12 @@ export const Footer = () => {
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           {links.map((link, index) => (
             <div className="px-3 py-2" key={index}>
-              <a
+              <Link
                 href={link.path}
                 className="text-base leading-6 text-gray-200 hover:text-white duration-200"
               >
                 {link.title}
-              </a>
+              </Link>
             </div>
           ))}
         </nav>

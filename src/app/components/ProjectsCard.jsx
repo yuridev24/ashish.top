@@ -7,13 +7,14 @@ import Link from "next/link";
 export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
   return (
     <motion.div
-      className="w-full p-0 m-0 transition"
+      className="w-full p-0 m-0 transition select-none"
       initial={{ scale: "0" }}
       animate={{ scale: "1" }}
       whileHover={{ scale: "1.05" }}
+      whileTap={{ scale: "0.97" }}
       transition={{ duration: 0.1 }}
     >
-      <a
+      <Link
         className="group block w-full bg-[#0a0a0a] hover:bg-primary-500"
         href={previewUrl}
         target="_blank"
@@ -47,7 +48,7 @@ export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </motion.div>
   );
 };

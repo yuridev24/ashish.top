@@ -4,6 +4,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -55,19 +56,18 @@ const HeroSection = () => {
           animate={{ x: 0, opacity: 100 }}
           transition={{ duration: 0.5 }}
         >
-          <a href="/resume.pdf"> {/* I don't think that making this a download would be good.
-          Most peoples including me won't see the resume so its fine. */}
+          <Link href="/resume.pdf"> {/* download */}
             <button className="transition group duration-200 px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white hover:opacity-80">
               <span>Download CV <ArrowDownTrayIcon className="group-hover:translate-y-[-1px] w-4 inline transition-transform translate-y-[-2px]" /></span>
             </button>
-          </a>
-          <a href="#about">
+          </Link>
+          <Link href="#about">
   <button className="group transition duration-200 px-1 py-1 w-full sm:w-fit rounded-full group-hover:bg-gradient-to-br group-hover:from-primary-500 group-hover:to-secondary-500 bg-slate-800 text-white mt-3 opacity-90">
     <span className="block group-hover:bg-slate-900 rounded-full px-5 py-2 opacity-90 transition duration-200">
       Know me more <ArrowRightIcon className="w-4 inline group-hover:translate-x-[4px] transition-transform" />
     </span>
   </button>
-</a>
+</Link>
         </motion.div>
       </div>
     </section>

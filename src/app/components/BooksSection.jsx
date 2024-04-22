@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { BookTag } from "./BookTag";
 import { motion, useInView } from "framer-motion";
 import { BooksCard } from "./BooksCard";
@@ -19,7 +19,7 @@ const booksData = [
     id: 8,
     name: "Building Web Apps with Python",
     description:
-      "In this book you will learn several topics about developing web apps with Python using the flask module. You will not just learn how to build apps but also how to protect from XSS attacks and such chapters. You will also learn to build some web apps with Python at the end. By the end of this book, you will be able to build your own, interactive web apps with Python.",
+      "Build web apps with Python using the flask framework. Flask provides a robust of control to build your web application very easily. You will learn how to render HTML, use Jinja, re-use templates and protection from XHR",
     tag: ["All", "Python", "Web Dev"],
     preview:
       "https://www.google.co.in/books/edition/Building_Web_Apps_with_Python/Ttj_EAAAQBAJ?hl=enhttps://books.google.co.in/books?id=Ttj_EAAAQBAJ&newbks=0&printsec=frontcover&pg=PA88&dq=Ashish+Agarwal+building+web+apps+with+python&hl=en&source=newbks_fb&redir_esc=y",
@@ -30,7 +30,7 @@ const booksData = [
     id: 7,
     name: "Microsoft Word A Junior&apos;s Guide",
     description:
-      "This book is easily explained to teach someone microsoft word from scratch without going too deep hard topics, which will be ideal for first-time newcomers.",
+      "Microsoft Word is a word processing software, also known as MS-WORD. This book guides you from nothing to more than a intermediate!",
     cover: "/images/books/7.png",
     tag: ["All", "Other"],
     preview:
@@ -41,7 +41,7 @@ const booksData = [
     id: 6,
     name: "HTML Express Beyond the Basics",
     description:
-      "A book about HTML5 for those who never had experience in programming. Start your adventure here!",
+      "Learn HTML beyond the basics. A guide for beginners!",
     cover: "/images/books/6.png",
     tag: ["All", "Web Dev"],
     preview:
@@ -52,7 +52,7 @@ const booksData = [
     id: 5,
     name: "How to make a email",
     description:
-      "For those who never experienced with gmail, this is just a short hand-book.",
+      "A short book explaining how to make a Gmail account and use it to send or recieve emails.",
     cover: "/images/books/5.png",
     tag: ["All", "Other"],
     preview:
@@ -63,7 +63,7 @@ const booksData = [
     id: 4,
     name: "SQL - A Beginner&apos;s Guide",
     description:
-      "In this book, you will learn SQL in depth from scratch for such a cheap amount.",
+      "Learn how to easily store your data in SQL, then access it. A guide to those who never already knew, what&epos;s SQL?",
     cover: "/images/books/4.png",
     tag: ["All", "Data"],
     preview:
@@ -74,7 +74,7 @@ const booksData = [
     id: 3,
     name: "Microsoft Word - A Professional Guide",
     description:
-      "In this book, you would learn detailed every feature of Microsoft Word (every tool too). It&apos;s for beginners, for those who do not ever experienced with Microsoft Word before. You would also learn the shortcut keys for tools that may have a key.",
+      "A master guide for Professionals. Learn every single feature and tool of Microsoft Word to get even more productive!",
     cover: "/images/books/3.png",
     tag: ["All", "Other"],
     preview:
@@ -85,7 +85,7 @@ const booksData = [
     id: 2,
     name: "Great Turtle Guide",
     description:
-      "This book is for those who would like to draw graphics with Python. You would use the &apos;turtle&apos; library of Python to draw graphics, also load images and a simple Indian flag. You would learn how to draw with multiple cursors and how to control the speed as well.",
+      "Guides almost every method of Python&epos;s Turtle Package. Learn just not the methods, but also make some graphics!",
     cover: "/images/books/2.png",
     tag: ["All", "Python", "Graphics"],
     preview:
@@ -119,8 +119,8 @@ export const BooksSection = () => {
   );
 
   const cardVariants = {
-    initial: { y: 50, opacity: 0, transform: "rotate(10deg)" },
-    animate: { y: 0, opacity: 1, transform: "rotate(0deg)" },
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
   };
 
   return (
@@ -131,9 +131,6 @@ export const BooksSection = () => {
           authored
         </span>
       </h2>
-      <p className="text-center text-xl text-white mt-4 mb-8 md:mb-4 font-italic">
-        I am the author!
-      </p>
       <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
         {bookTags.map((tagName, index) => (
           <BookTag
@@ -144,7 +141,7 @@ export const BooksSection = () => {
           />
         ))}
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid md:grid-cols-3 gap-4 md:gap-6">
         {filteredBooks.map((book, index) => (
           <motion.li
             variants={cardVariants}
@@ -158,7 +155,6 @@ export const BooksSection = () => {
               name={book.name.replace(/&apos;/g, "'")}
               desc={book.description.replace(/&apos;/g, "'")}
               cover={book.cover}
-              tags={book.tag}
               preview={book.preview}
               buy={book.buy}
             />
