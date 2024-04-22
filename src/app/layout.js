@@ -1,6 +1,6 @@
 import "./globals.css";
 // import { Metadata } from "next";
-import {inter, poppins} from "./fonts.js"
+import {inter} from "./fonts.js"
 
 export const metadata = {
   title: "Ashish Agarwal",

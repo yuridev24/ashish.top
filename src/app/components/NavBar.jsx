@@ -1,11 +1,13 @@
-  "use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import GithubIcon from "/public/github-icon.svg";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import { poppins } from "../fonts";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -18,7 +20,7 @@ const navLinks = [
   },
   {
     title: "Books",
-    path: "#books"
+    path: "#books",
   },
   {
     title: "Projects",
@@ -66,6 +68,14 @@ export const NavBar = () => {
                 <NavLink title={link.title} href={link.path} />
               </li>
             ))}
+            <li>
+              <Link
+                href="https://github.com/ashishagarwal2023"
+                className="hover:opacity-80 transition duration-200 w-32 h-32"
+              >
+                <Image src={GithubIcon} alt="GitHub Icon" width={32} height={32} />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

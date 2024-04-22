@@ -2,8 +2,7 @@
 
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
-import { ArrowUpRightIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -48,7 +47,7 @@ const HeroSection = () => {
             />
           </h1>
            <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400]">
-            Open-source freelancer, programmer from <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">India</span>. Has a vast of knowledge in languages like JavaScript, Python, R, SQL, HTML, CSS & Node.js. Experienced with frameworks like Django and Flask with experience in WordPress and also experienced with libraries like Bootstrap, TailwindCSS and jQuery, with tools like Git, Prettier, and a lot more. <strong>Scroll down to continue!</strong>
+            Open-source freelancer, programmer from <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">India</span>. Lot knowledge in languages like JavaScript, Python, R, SQL, HTML, CSS & Node.js. Experienced with frameworks like Django and Flask. Comfortable with libraries like Bootstrap, TailwindCSS and jQuery, with tools like Git, Prettier, and a lot more and increasing.
           </p>
         </motion.div>
         <motion.div
@@ -56,9 +55,10 @@ const HeroSection = () => {
           animate={{ x: 0, opacity: 100 }}
           transition={{ duration: 0.5 }}
         >
-          <a href="https://github.com/ashishagarwal2023" target="_blank">
+          <a href="/resume.pdf"> {/* I don't think that making this a download would be good.
+          Most peoples including me won't see the resume so its fine. */}
             <button className="transition group duration-200 px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white hover:opacity-80">
-              <span>Visit GitHub <ArrowUpRightIcon className="group-hover:translate-x-[2px] group-hover:translate-y-[-4px] w-4 inline transition-transform translate-y-[-1px]" /></span>
+              <span>Download CV <ArrowDownTrayIcon className="group-hover:translate-y-[-1px] w-4 inline transition-transform translate-y-[-2px]" /></span>
             </button>
           </a>
           <a href="#about">
