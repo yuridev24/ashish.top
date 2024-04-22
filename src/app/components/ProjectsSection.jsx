@@ -81,6 +81,8 @@ export const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl text-white mt-4 mb-2 md:mb-4 font-semibold">
+        <span className="text-xl text-white font-thin">Here are mine...</span>
+        <br />
         <span className="bg-gradient-to-r from-primary-300 via-primary-450 bg-clip-text to-primary-500 radial text-transparent">
           Projects
         </span>

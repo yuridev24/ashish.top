@@ -27,7 +27,8 @@ export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
           <p className="text-md mb-0.5">{title}</p>
           <p className="mb-1 text-sm text-[#737373] group-hover:text-white">
             {desc}
-            <br />
+          </p>
+          <div className="my-2">
             <div className="flex flex-row justify-between">
               <Link
                 href={gitUrl}
@@ -44,7 +45,7 @@ export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
                 <EyeIcon className="w-6 h-6 text-inherit" />
               </Link>
             </div>
-          </p>
+          </div>
         </div>
       </a>
     </motion.div>
