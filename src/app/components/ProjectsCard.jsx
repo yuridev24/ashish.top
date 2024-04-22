@@ -1,33 +1,52 @@
-import React from "react";
+"use client";
+
+import { motion } from "framer-motion";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
   return (
-    <div>
-      <div
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-        className="h-52 md:h-72 rounded-t-xl relative group transition duration-200"
+    <motion.div
+      className="w-full p-0 m-0 transition"
+      initial={{ scale: "0" }}
+      animate={{ scale: "1" }}
+      whileHover={{ scale: "1.05" }}
+      transition={{ duration: 0.1 }}
+    >
+      <a
+        className="group block w-full bg-[#0a0a0a] hover:bg-primary-500"
+        href={previewUrl}
+        target="_blank"
       >
-        <div className="items-center justify-center  overlay absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition duration-300">
-          <Link
-            href={gitUrl}
-            className="mr-2 h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <CodeBracketIcon className="w-10 h-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
-          <Link
-            href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <EyeIcon className="w-10 h-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
-          </Link>
+        <img
+          className="aspect-auto w-full object-cover"
+          src={imgUrl}
+          alt={title}
+        />
+        <div className="border border-[#171717] px-4 py-2 group-hover:border-primary-400">
+          <p className="text-md mb-0.5">{title}</p>
+          <p className="mb-1 text-sm text-[#737373] group-hover:text-white">
+            {desc}
+            <br />
+            <div className="flex flex-row justify-between">
+              <Link
+                href={gitUrl}
+                target="_blank"
+                className="text-primary-400 group-hover:bg-primary-800 rounded-full p-2 font-bold bg-primary-900"
+              >
+                <CodeBracketIcon className="w-6 h-6 text-inherit" />
+              </Link>
+              <Link
+                href={previewUrl}
+                target="_blank"
+                className="text-primary-400 group-hover:bg-primary-800 rounded-full p-2 font-bold bg-primary-900"
+              >
+                <EyeIcon className="w-6 h-6 text-inherit" />
+              </Link>
+            </div>
+          </p>
         </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
-        <h5 className="font-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE]">{desc}</p>
-      </div>
-    </div>
+      </a>
+    </motion.div>
   );
 };

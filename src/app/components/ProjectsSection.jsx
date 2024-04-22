@@ -74,8 +74,8 @@ export const ProjectsSection = () => {
   );
 
   const cardVariants = {
-    initial: { y: 50, opacity: 0, transform: "rotate(10deg)" },
-    animate: { y: 0, opacity: 1, transform: "rotate(0deg)" },
+    initial: { y: 50, opacity: 0},
+    animate: { y: 0, opacity: 1},
   };
 
   return (
@@ -95,9 +95,9 @@ export const ProjectsSection = () => {
           />
         ))}
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid md:grid-cols-3 gap-4 md:gap-6">
         {filteredProjects.map((project, index) => (
-          <motion.li
+          <motion.div
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
@@ -109,11 +109,10 @@ export const ProjectsSection = () => {
               title={project.title}
               desc={project.description}
               imgUrl={project.image}
-              tags={project.tag}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />
-          </motion.li>
+          </motion.div>
         ))}
       </ul>
     </section>
