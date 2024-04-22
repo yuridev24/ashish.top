@@ -132,7 +132,7 @@ export const BooksSection = () => {
         </span>
       </h2>
       <p className="text-center text-xl text-white mt-4 mb-8 md:mb-4 font-italic">
-        These books were completely wrote by me :)
+        I am the author!
       </p>
       <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
         {bookTags.map((tagName, index) => (

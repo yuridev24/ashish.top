@@ -80,17 +80,19 @@ export const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        My Projects
+      <h2 className="text-center text-4xl text-white mt-4 mb-2 md:mb-4 font-semibold">
+        <span className="bg-gradient-to-r from-primary-300 via-primary-450 bg-clip-text to-primary-500 radial text-transparent">
+          Projects
+        </span>
       </h2>
       <div className="text-white md:flex flex-rows justify-center items-center md:gap-2 py-6">
         {projectTags.map((tagName, index) => (
           <ProjectTag
-          key={index}
-          name={tagName}
-          onClick={handleTagChange}
-          isSelected={tag === tagName}
-        />
+            key={index}
+            name={tagName}
+            onClick={handleTagChange}
+            isSelected={tag === tagName}
+          />
         ))}
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
