@@ -14,7 +14,7 @@ body{
     color: white;
 }
 
-img, svg, i, header, nav, footer{
+img, svg, i, header, nav, footer, button{
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;

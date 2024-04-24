@@ -8,6 +8,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import { poppins } from "../fonts";
 import Image from "next/image";
+import {motion} from "framer-motion";
 
 const navLinks = [
   {
@@ -72,14 +73,20 @@ export const NavBar = () => {
                 <NavLink title={link.title} href={link.path} />
               </li>
             ))}
-            <li>
+            <motion.li
+				initial={{y: 100}}
+				animate={{y: 0}}
+				className={"transition"}
+				whileHover={{scale: "1.1"}}
+				whileTap={{scale: "1.05"}}
+				transition={{duration: 0.1}}>
               <Link
                 href="https://github.com/ashishagarwal2023"
                 className="hover:opacity-80 transition duration-200 w-32 h-32"
               >
                 <Image src={GithubIcon} alt="GitHub Icon" width={32} height={32} />
               </Link>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

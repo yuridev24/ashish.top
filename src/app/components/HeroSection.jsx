@@ -4,6 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import {SkillLogo} from "@/app/components/SkillLogo";
 
 const HeroSection = () => {
   return (
@@ -62,6 +63,15 @@ const HeroSection = () => {
             Comfortable with libraries like Bootstrap, TailwindCSS and jQuery,
             with tools like Git, Prettier, and a lot more and increasing.
           </p>
+			<div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
+				<SkillLogo path={"javascript.png"} language={"JavaScript"} />
+				<SkillLogo path={"typescript.png"} language={"TypeScript"} />
+				<SkillLogo path={"react.png"} language={"React"} />
+				<SkillLogo path={"nextjs.svg"} language={"Next.js"} />
+				<SkillLogo path={"svelte.png"} language={"Svelte"} />
+				<SkillLogo path={"git.png"} language={"Git"}/>
+				<SkillLogo path={"tailwindcss.png"} language={"Tailwind CSS"} />
+			</div>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 100 }}

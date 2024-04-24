@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GithubIcon from "../../../public/github-icon.svg";
 import { CogIcon } from "@heroicons/react/24/outline";
+import {motion} from "framer-motion";
 
 export const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -53,27 +54,35 @@ export const EmailSection = () => {
           </i>
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link
-            href="https://github.com/ashishagarwal2023"
-            className="hover:opacity-80 transition duration-200"
-          >
-            <Image src={GithubIcon} alt="GitHub Icon" />
-          </Link>
-        </div>
-      </div>
-      <div>
-        {emailSubmitted ? (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <p className="text-green-500 text-sm mt-2">
-                Thank you for your email! I will get back to you soon.
-              </p>
-            </div>
-          </form>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
+			<motion.div
+				initial={{y: 100}}
+				animate={{y: 0}}
+				className={"transition"}
+				whileHover={{scale: "1.1"}}
+				whileTap={{scale: "1.05"}}
+				transition={{duration: 0.1}}>
+				<Link
+					href="https://github.com/ashishagarwal2023"
+					className="hover:opacity-80 transition duration-200 w-[40px] h-[40px]"
+				>
+					<Image src={GithubIcon} alt="GitHub Icon" width={40} height={40}/>
+				</Link>
+			</motion.div>
+		</div>
+	  </div>
+		<div>
+			{emailSubmitted ? (
+				<form className="flex flex-col" onSubmit={handleSubmit}>
+					<div className="mb-6">
+						<p className="text-green-500 text-sm mt-2">
+							Thank you for your email! I will get back to you soon.
+						</p>
+					</div>
+				</form>
+			) : (
+				<form className="flex flex-col" onSubmit={handleSubmit}>
+					<div className="mb-6">
+						<label
                 htmlFor="email"
                 className="text-white block text-sm font-medium mb-2"
               >
@@ -143,7 +152,7 @@ export const EmailSection = () => {
                 "Submit"
               )}
             </button>
-{/* 
+{/*
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"

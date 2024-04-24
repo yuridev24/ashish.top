@@ -10,6 +10,8 @@ export const Skill = ({ name, file, type }) => {
       }
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 1 }}
+	  initial={{ opacity: 0 }}
+	  animate={{ opacity: 1 }}
       transition={{ duration: 0.1 }}
     >
       <img
