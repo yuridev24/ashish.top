@@ -33,7 +33,7 @@ const TAB_DATA = [
         <Skill
           name="Google IT Support"
           file="gitsupport.png"
-          href="https://www.credly.com/earner/earned/badge/36b52ef9-b4fe-475a-aae1-400452724d07"
+          href="https://www.credly.com/badges/36b52ef9-b4fe-475a-aae1-400452724d07/public_url"
           type="Professional Certificate"
         />
         <Skill
