@@ -33,11 +33,13 @@ const TAB_DATA = [
         <Skill
           name="Google IT Support"
           file="gitsupport.png"
+          href="https://www.credly.com/org/coursera/badge/google-it-support-professional-certificate.1"
           type="Professional Certificate"
         />
         <Skill
           name="Google Data Analytics"
-          file="gitanalytics.png"
+          href="https://www.credly.com/org/coursera/badge/google-data-analytics-professional-certificate.2"
+          file="gdataanalytics.png"
           type="Professional Certificate"
         />
       </ul>
