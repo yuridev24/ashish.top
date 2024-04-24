@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const Skill = ({ name, file, type, href = "#" }) => {
   return (
-    <a href={href}>
+    <a href={href} target={(href === "#") ? "" : "_blank"}>
       <motion.div
         className={
           `select-none group ` +
