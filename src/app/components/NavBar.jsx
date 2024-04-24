@@ -74,8 +74,6 @@ export const NavBar = () => {
               </li>
             ))}
             <motion.li
-				initial={{y: 100}}
-				animate={{y: 0}}
 				className={"transition"}
 				whileHover={{scale: "1.1"}}
 				whileTap={{scale: "1.05"}}
