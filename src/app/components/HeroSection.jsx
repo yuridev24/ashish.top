@@ -59,9 +59,8 @@ const HeroSection = () => {
               India
             </span>
             . Lot knowledge in languages like JavaScript, Python, R, SQL, HTML,
-            CSS & Node.js. Experienced with frameworks like Django and Flask.
-            Comfortable with libraries like Bootstrap, TailwindCSS and jQuery,
-            with tools like Git, Prettier, and a lot more and increasing.
+            CSS & Node.js. Experienced with frameworks like Next.js, Django and Flask.
+            With knowledge of libraries like Bootstrap, TailwindCSS and jQuery and tools like Git, Prettier, and a lot more & increasing.
           </p>
 			<div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
 				<SkillLogo path={"javascript.png"} language={"JavaScript"} />
