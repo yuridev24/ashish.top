@@ -6,16 +6,15 @@ export async function getAllPostSlugs() {
   } = await query({
     query: `
       query($host: String!) {
-  publication(host: $host) {
-    posts(first: 19) {
-      edges {
-        node {
-          slug
+        publication(host: $host) {
+          posts(first: 10) {
+            edges {
+              slug
+              }
+            }
+          }
         }
       }
-    }
-  }
-}
     `,
     variables: {
       host: process.env.HASHNODE_HOST,

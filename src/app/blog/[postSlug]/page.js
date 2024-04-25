@@ -1,6 +1,18 @@
 import Image from "next/image";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs();
+
+  const params = slugs.map((slug) => ({
+    params: {
+      postSlug: slug,
+    },
+  }));
+
+  return params;
+}
+
 export async function generateMetadata({
   params,
 }) {
@@ -75,15 +87,4 @@ export default async function Post({ params }) {
       </div>
     </>
   );
-}
-export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
-
-  const params = slugs.map((slug) => ({
-    params: {
-      postSlug: slug,
-    },
-  }));
-
-  return params;
 }
