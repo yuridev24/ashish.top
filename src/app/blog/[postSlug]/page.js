@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-const post = () => {
+const Post = () => {
   const postSlug = useParams().postSlug;
   return (
     <>
@@ -11,4 +11,4 @@ const post = () => {
   );
 }
 
-export default post;
+export default POst;

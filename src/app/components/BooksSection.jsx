@@ -63,7 +63,7 @@ const booksData = [
     id: 4,
     name: "SQL - A Beginner&apos;s Guide",
     description:
-      "Learn how to easily store your data in SQL, then access it. A guide to those who never already knew, what&epos;s SQL?",
+      "Learn how to easily store your data in SQL, then access it. A guide to those who never already knew, what&apos;s SQL?",
     cover: "/images/books/4.png",
     tag: ["All", "Data"],
     preview:
@@ -85,7 +85,7 @@ const booksData = [
     id: 2,
     name: "Great Turtle Guide",
     description:
-      "Guides almost every method of Python&epos;s Turtle Package. Learn just not the methods, but also make some graphics!",
+      "Guides almost every method of Python&apos;s Turtle Package. Learn just not the methods, but also make some graphics!",
     cover: "/images/books/2.png",
     tag: ["All", "Python", "Graphics"],
     preview:
