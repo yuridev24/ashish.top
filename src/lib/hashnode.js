@@ -7,10 +7,11 @@ export async function query({ query, variables, tags }) {
     body: JSON.stringify({
       query,
       variables,
+      next: {
+        tags,
+        revalidate: 5,
+      },
     }),
-    next: {
-      tags,
-    },
   }).then((r) => r.json());
   return data;
 }

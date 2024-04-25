@@ -9,7 +9,8 @@ export async function getAllPostSlugs() {
         publication(host: $host) {
           posts(first: 10) {
             edges {
-              slug
+              node {
+                slug
               }
             }
           }
