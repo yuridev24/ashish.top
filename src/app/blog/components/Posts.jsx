@@ -1,5 +1,3 @@
-"use client";
-
 import { query } from '@/lib/hashnode';
 
 import { Post } from "./Post";
