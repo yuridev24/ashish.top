@@ -1,14 +1,17 @@
 'use client';
 
-import { useParams } from "next/navigation";
+import { Heading } from "./components/Heading";
+
+// import { useParams } from "next/navigation";
 
 const Post = () => {
-  const postSlug = useParams().postSlug;
+  // const postSlug = useParams().postSlug;
   return (
     <>
-      {postSlug}
+      {/* {postSlug} */}
+      <Heading />
     </>
   );
 }
 
-export default POst;
+export default Post;

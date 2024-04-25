@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 export const Post = ({ imgUrl, title, desc, url, index }) => {
@@ -18,10 +19,9 @@ export const Post = ({ imgUrl, title, desc, url, index }) => {
       onAnimationComplete={handleDone}
       transition={{ duration: 0.1, delay: indexCount / 8 }}
     >
-      <a
+      <Link
         className="group block w-full bg-[#0a0a0a] hover:bg-primary-500 cursor-pointer"
         href={!(url === "") && url}
-        target={!(url === "") && "_blank"}
       >
         <div className="flex justify-between">
           <div className="px-4 py-2">
@@ -36,7 +36,7 @@ export const Post = ({ imgUrl, title, desc, url, index }) => {
             alt={title}
           />
         </div>
-      </a>
+      </Link>
     </motion.div>
   );
 };

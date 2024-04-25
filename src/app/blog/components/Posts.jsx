@@ -9,25 +9,25 @@ const posts = [
     img: "/images/projects/1.png",
     title: "First!",
     desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "",
+    url: "first",
   },
   {
     img: "/images/projects/1.png",
     title: "First!",
     desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "",
+    url: "first",
   },
   {
     img: "/images/projects/1.png",
     title: "First!",
     desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "",
+    url: "first",
   },
   {
     img: "/images/projects/1.png",
     title: "First!",
     desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "",
+    url: "first",
   },
 ];
 
@@ -48,7 +48,7 @@ export const Posts = () => {
           imgUrl={post.img}
           title={post.title}
           desc={post.desc}
-          url={post.url}
+          url={`/blog/${post.url}`}
         />
       ))}
       <LoadMore action={handleLoadMore} disabled={loadMoreDisabled} />
