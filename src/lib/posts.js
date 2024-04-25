@@ -2,28 +2,24 @@ import { query } from "@/lib/hashnode";
 
 export async function getAllPostSlugs() {
   const {
-    data: { publication },
+    data: { user },
   } = await query({
     query: `
-      query($host: String!) {
-        publication(host: $host) {
-          posts(first: 10) {
-            edges {
-              node {
-                slug
-              }
-            }
+      query{
+  user(username: "ashishagarwal") {
+    posts(pageSize: 20, page:1) {
+        edges{
+          node{
+            slug
           }
         }
-      }
+    }
+  }
+}
     `,
-    variables: {
-      host: process.env.HASHNODE_HOST,
-    },
+    variables: {},
   });
-
-  const slugs = publication?.posts?.edges?.map((edge) => edge.node.slug) ?? [];
-
+  const slugs = user?.posts?.edges?.map((edge) => edge.node.slug) ?? [];
   return slugs;
 }
 
