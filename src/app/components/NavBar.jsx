@@ -13,27 +13,11 @@ import {motion} from "framer-motion";
 const navLinks = [
   {
     title: "Home",
-    path: "#home",
+    path: "/",
   },
   {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Skills",
-    path: "#skills",
-  },
-  {
-    title: "Books",
-    path: "#books",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
+    title: "Blog",
+    path: "/blog",
   },
 ];
 

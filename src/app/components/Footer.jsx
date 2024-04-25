@@ -5,23 +5,11 @@ const currentYear = new Date().getFullYear();
 const links = [
   {
     title: "Home",
-    path: "#home",
+    path: "/",
   },
   {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Books",
-    path: "#books",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
+    title: "Blog",
+    path: "/blog",
   },
 ];
 

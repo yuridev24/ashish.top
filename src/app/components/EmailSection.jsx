@@ -44,14 +44,7 @@ export const EmailSection = () => {
           Let&apos;s connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently looking for new opportunities. If you think
-          I&apos;d be a good fit for your team, I&apos;d love to hear from you.
-        </p>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          <i>
-            If you cannot send email through the form, feel free to email me
-            (this form is on a monthly limit, so it might not work at all).
-          </i>
+          Let&apos;s have a chat! Do you need some help or want to just say hello? Fill out the form and I&apos;ll be with you!
         </p>
         <div className="socials flex flex-row gap-2">
 			<motion.div

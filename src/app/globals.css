@@ -19,3 +19,7 @@ img, svg, i, header, nav, footer, button{
     -webkit-user-select: none;
     -moz-user-select: none;
 }
+
+.content_main{
+    min-height: 65vh;
+}

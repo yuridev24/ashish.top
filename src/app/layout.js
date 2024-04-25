@@ -1,5 +1,7 @@
 import "./globals.css";
-import {inter} from "./fonts.js"
+import { inter } from "./fonts.js"
+import { Footer } from "./components/Footer";
+import { NavBar } from "./components/NavBar";
 
 export const metadata = {
   title: "Ashish Agarwal",
@@ -38,7 +40,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex min-h-screen flex-col bg-[#121212]">
+          <NavBar />
+          <div className="container mx-auto py-4 px-12 mt-24 content_main">
+            {children}
+          </div>
+          <Footer />
+        </main>
+      </body>
     </html>
   );
 }
