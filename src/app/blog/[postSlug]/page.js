@@ -1,17 +1,20 @@
-'use client';
-
 import { Heading } from "./components/Heading";
 
-// import { useParams } from "next/navigation";
+'use client';
+
 
 const Post = () => {
-  // const postSlug = useParams().postSlug;
   return (
     <>
-      {/* {postSlug} */}
       <Heading />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  return [
+    { params: { postSlug: "first" } },
+  ];
 }
 
 export default Post;
