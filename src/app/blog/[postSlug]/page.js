@@ -3,7 +3,9 @@ import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
-  return slugs;
+  return slugs.map((slug) => ({
+    postSlug: slug
+  }));
 }
 
 export async function generateMetadata({
