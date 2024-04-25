@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-export const Post = ({ imgUrl, title, desc, url, index }) => {
+export const Post = ({ imgUrl, title, url, index, desc }) => {
   const [indexCount, setIndexCount] = useState(index);
   const handleDone = () => {
     setIndexCount(0);
-  }
+  };
   return (
     <motion.div
       className="w-full p-0 m-0 transition select-none"
@@ -31,7 +31,7 @@ export const Post = ({ imgUrl, title, desc, url, index }) => {
             </p>
           </div>
           <img
-            className="aspect-auto hidden md:block md:w-56 lg:w-96 object-cover"
+            className="aspect-auto hidden md:block md:w-24 lg:w-56 object-cover"
             src={imgUrl}
             alt={title}
           />

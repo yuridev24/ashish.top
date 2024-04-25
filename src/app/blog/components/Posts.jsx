@@ -1,57 +1,48 @@
 "use client";
 
-import { useState } from "react";
-import { LoadMore } from "./LoadMore";
+import { query } from '@/lib/hashnode';
+
 import { Post } from "./Post";
 
-const posts = [
-  {
-    img: "/images/projects/1.png",
-    title: "First!",
-    desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "first",
-  },
-  {
-    img: "/images/projects/1.png",
-    title: "First!",
-    desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "first",
-  },
-  {
-    img: "/images/projects/1.png",
-    title: "First!",
-    desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "first",
-  },
-  {
-    img: "/images/projects/1.png",
-    title: "First!",
-    desc: "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-    url: "first",
-  },
-];
-
-export const Posts = () => {
-  const [loadMoreDisabled, setLoadMoreDisabled] = useState(false);
-  const handleLoadMore = () => {
-    setLoadMoreDisabled(true);
-    setTimeout(() => {
-      setLoadMoreDisabled(false);
-    }, 3000);
-  }
+export const Posts = async () => {
+  const { data: { publication } } = await query({
+    query: `
+      query($host: String!) {
+        publication(host: $host) {
+          posts(first: 10) {
+            edges {
+              node {
+                coverImage {
+                  url
+                }
+                id
+                slug
+                title
+                subtitle
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      host: process.env.HASHNODE_HOST
+    }
+  });
+  const posts = publication.posts.edges.map(({ node }) => node);
+  console.log(posts);
   return (
     <div className="mt-8 font-sans gap-4 flex flex-col">
       {posts.map((post, index) => (
         <Post
           key={index}
-          index={index}
-          imgUrl={post.img}
+          url={`/blog/${post.slug}`}
+          imgUrl={post.coverImage.url}
           title={post.title}
-          desc={post.desc}
-          url={`/blog/${post.url}`}
+          index={index}
+          desc={post.subtitle}
         />
       ))}
-      <LoadMore action={handleLoadMore} disabled={loadMoreDisabled} />
     </div>
   );
 };
