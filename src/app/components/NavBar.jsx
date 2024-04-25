@@ -8,7 +8,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 import { poppins } from "../fonts";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -22,6 +23,7 @@ const navLinks = [
 ];
 
 export const NavBar = () => {
+  const route = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 bg-[#121212] z-[99]">
@@ -54,7 +56,7 @@ export const NavBar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index} className="hidden lg:block">
-                <NavLink title={link.title} href={link.path} />
+                <NavLink title={link.title} href={link.path} active={route === link.path} />
               </li>
             ))}
             <motion.li

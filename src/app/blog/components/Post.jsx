@@ -31,7 +31,7 @@ export const Post = ({ imgUrl, title, desc, url, index }) => {
             </p>
           </div>
           <img
-            className="aspect-auto w-96 object-cover"
+            className="aspect-auto hidden md:block md:w-56 lg:w-96 object-cover"
             src={imgUrl}
             alt={title}
           />
