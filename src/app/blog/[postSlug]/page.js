@@ -1,7 +1,6 @@
+"use client";
+
 import { Heading } from "./components/Heading";
-
-'use client';
-
 
 const Post = () => {
   return (
@@ -9,12 +8,10 @@ const Post = () => {
       <Heading />
     </>
   );
-}
+};
 
 export async function generateStaticParams() {
-  return [
-    { params: { postSlug: "first" } },
-  ];
+  return [{ params: { postSlug: "first" } }];
 }
 
 export default Post;
