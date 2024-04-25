@@ -9,7 +9,7 @@ export async function query({ query, variables, tags }) {
       variables,
       next: {
         tags,
-        revalidate: 5,
+        cache: "no-store"
       },
     }),
   }).then((r) => r.json());
