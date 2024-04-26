@@ -29,11 +29,8 @@ export const Sign = ({ onSignSubmit }) => {
           image: session?.user?.image,
           message: message,
         });
-        window.alert("Comment submitted!");
-      } else {
-        window.alert("Comment cannot be empty!");
+        setMessage("");
       }
-      setMessage("");
     } catch (error) {
       console.error("Error submitting: " + error);
     }
