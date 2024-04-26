@@ -20,10 +20,6 @@ img, svg, i, header, nav, footer, button{
     -moz-user-select: none;
 }
 
-.content_main{
-    min-height: 65vh;
-}
-
 .article_contents h2,
 .article_contents p,
 .article_contents strong,

@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className="flex min-h-screen flex-col bg-[#121212]">
           <NavBar />
-          <div className="container mx-auto py-4 px-12 mt-24 content_main">
+          <div className="container mx-auto py-4 px-12 mt-24">
             {children}
           </div>
           <Footer />

@@ -21,5 +21,5 @@ module.exports = {
       secondary: colors.orange,
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
