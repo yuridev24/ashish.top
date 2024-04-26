@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "Ashish Agarwal",
     images: [
       {
-        url: "https://ashishagarwal.is-a.dev/meta.png",
+        url: "https://ashishagr.vercel.app/meta.png",
         width: 1366,
         height: 443,
       },
