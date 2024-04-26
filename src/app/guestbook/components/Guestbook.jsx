@@ -23,7 +23,7 @@ export const Guestbook = () => {
         const messageData = doc.data();
         messagesData.push(messageData);
       });
-      messagesData.sort((a, b) => a.time - b.time);
+      messagesData.sort((a, b) => b.time - a.time);
       setMessages(messagesData);
     };
 
