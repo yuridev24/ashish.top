@@ -20,6 +20,10 @@ const navLinks = [
     title: "Blog",
     path: "/blog",
   },
+  {
+    title: "Guestbook",
+    path: "/guestbook",
+  }
 ];
 
 export const NavBar = () => {

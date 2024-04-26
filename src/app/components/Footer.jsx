@@ -11,6 +11,10 @@ const links = [
     title: "Blog",
     path: "/blog",
   },
+  {
+    title: "Guestbook",
+    path: "/guestbook",
+  },
 ];
 
 export const Footer = () => {
