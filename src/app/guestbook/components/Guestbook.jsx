@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import firebaseApp from "../../../lib/firebase";
 import Image from "next/image";
-import {Sign} from "./Sign";
+import { Sign } from "./Sign";
+
+const ownerId = "83082760"; // GitHub User ID, https://avatars.githubusercontent.com/u/83082760?v=4&w=48&q=75
 
 export const Guestbook = () => {
   const [messages, setMessages] = useState([]);
@@ -21,7 +23,7 @@ export const Guestbook = () => {
         const messageData = doc.data();
         messagesData.push(messageData);
       });
-      messagesData.sort((a, b) => b.time - a.time);
+      messagesData.sort((a, b) => a.time - b.time);
       setMessages(messagesData);
     };
 
@@ -84,6 +86,20 @@ export const Guestbook = () => {
               />
               <div>
                 <h3 className="text-lg font-medium inline">{message.name} </h3>
+                {message.image.startsWith(
+                  `https://avatars.githubusercontent.com/u/${ownerId}`
+                ) && (
+                  <>
+                    <Image
+                      src="/images/icons/verified.svg"
+                      width={22}
+                      height={22}
+                      alt="Ashish Agarwal"
+                      className="inline mr-1 transform translate-y-[-2px]"
+                    />
+                    <span className="text-[#1d9bf0]">Creator </span>
+                  </>
+                )}
                 <h2 className="text-base font-medium text-gray-400 inline">
                   {parseTime(message.time)}
                 </h2>
