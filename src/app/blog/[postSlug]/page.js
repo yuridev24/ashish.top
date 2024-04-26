@@ -1,5 +1,6 @@
 import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 import { Article } from "./components/Article";
+import { NewsLetter } from "../components/NewsLetter";
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
@@ -22,6 +23,7 @@ export default async function Post({ params }) {
   return (
     <>
       <Article post={post} />
+      <NewsLetter />
     </>
   );
 }
