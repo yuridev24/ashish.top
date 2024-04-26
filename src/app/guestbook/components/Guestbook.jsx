@@ -85,7 +85,10 @@ export const Guestbook = () => {
                 height={48}
               />
               <div>
-                <h3 className="text-lg font-medium inline">{message.name} </h3>
+                <a
+                  href={message.github}
+                  target="_blank"
+                  className="text-lg font-medium inline cursor-pointer hover:text-[#1d9bf0] transition duration-75">{message.name} </a>
                 {message.image.startsWith(
                   `https://avatars.githubusercontent.com/u/${ownerId}`
                 ) && (

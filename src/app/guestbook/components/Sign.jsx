@@ -11,10 +11,25 @@ export const Sign = ({ onSignSubmit }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const getGithubData = async () => {
+    try {
+      const imageUrl = session?.user?.image;
+      const regex = /\/u\/(\d+)\?/;
+      const match = imageUrl.match(regex);
+      const userID = match ? match[1] : null;
+      const response = await fetch(`https://api.github.com/user/${userID}`);
+      const data = await response.json();
+      return data.html_url;
+    } catch (error) {
+      console.error("Error fetching GitHub data: " + error);
+    }
+  };
+
   const handleWriteMessage = async (e) => {
     e.preventDefault();
     try {
       const db = getFirestore(firebaseApp);
+      const id = await getGithubData();
       const messageRef = collection(db, "messages");
       if (message.trim() !== "") {
         await addDoc(messageRef, {
@@ -23,6 +38,7 @@ export const Sign = ({ onSignSubmit }) => {
           image: session?.user?.image,
           message: message,
           time: new Date().getTime(),
+          github: id,
         });
         onSignSubmit({
           email: session?.user?.email,
@@ -30,6 +46,7 @@ export const Sign = ({ onSignSubmit }) => {
           image: session?.user?.image,
           message: message,
           time: new Date().getTime(),
+          github: id,
         });
         setMessage("");
       }
