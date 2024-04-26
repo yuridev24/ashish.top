@@ -22,12 +22,14 @@ export const Sign = ({ onSignSubmit }) => {
           name: session?.user?.name,
           image: session?.user?.image,
           message: message,
+          time: new Date().getTime(),
         });
         onSignSubmit({
           email: session?.user?.email,
           name: session?.user?.name,
           image: session?.user?.image,
           message: message,
+          time: new Date().getTime(),
         });
         setMessage("");
       }
