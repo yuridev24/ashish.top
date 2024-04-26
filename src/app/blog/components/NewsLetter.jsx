@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { subscribe } from './Subscribe';
 
 export const NewsLetter = () => {
   const {
@@ -23,17 +24,15 @@ export const NewsLetter = () => {
 
   const onSubmit = async (data) => {
     setLoading(true);
-    const response = await fetch('/api/newsletter', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+    const response = await subscribe(data.email);
+    const parsedResponse = JSON.parse(response);
 
-    if ((!response.ok) || response.status != 200) {
+    if (parsedResponse.message != "Success") {
       setLoading(false);
-      handleSubmitMessage('Something went wrong. Please try again.', "text-red-500");
+      handleSubmitMessage(
+        "Something went wrong. Please try again.",
+        "text-red-500"
+      );
       return;
     }
 

@@ -1,10 +1,7 @@
-import { NextResponse } from "next/server";
+"use client";
 
-export async function POST(req) {
+export async function subscribe(email) {
   try {
-    const body = await req.json();
-    const { email } = body;
-
     const requestBody = {
       query: `
         mutation SubscribeToNewsletter($input: SubscribeToNewsletterInput!) {
@@ -32,9 +29,8 @@ export async function POST(req) {
     if (!response.ok) {
       const errorData = await response.json();
       console.error("Error response:", errorData.errors);
-      return NextResponse.json(
-        { message: "Subscription failed", error: errorData.errors },
-        { status: 500 }
+      return JSON.stringify(
+        { message: "Subscription failed", error: errorData.errors }
       );
     }
 
@@ -42,28 +38,29 @@ export async function POST(req) {
     if (data && data.errors && data.errors.length > 0) {
       const errorMessage = data.errors[0].message;
       if (errorMessage === "Email already subscribed") {
-        return NextResponse.json(
+        return JSON.stringify(
           { message: "Success", data }, // Already subscribed
-          { status: 200 }
         );
       }
     }
-    if (data && data.data && data.data.subscribeToNewsletter && data.data.subscribeToNewsletter.status === "PENDING") {
-      return NextResponse.json(
-      { message: "Success", data }, // New subscriber
-      { status: 200 }
+    if (
+      data &&
+      data.data &&
+      data.data.subscribeToNewsletter &&
+      data.data.subscribeToNewsletter.status === "PENDING"
+    ) {
+      return JSON.stringify(
+        { message: "Success", data }, // New subscriber
       );
     } else {
-      return NextResponse.json(
+      return JSON.stringify(
         { message: "Subscription failed", data },
-        { status: 500 }
       );
     }
   } catch (error) {
     console.error("Server error:", error);
-    return NextResponse.json(
+    return JSON.stringify(
       { message: "Subscription failed", error },
-      { status: 500 }
     );
   }
 }
