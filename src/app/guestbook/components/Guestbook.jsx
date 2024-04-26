@@ -6,6 +6,8 @@ import firebaseApp from "../../../lib/firebase";
 import Image from "next/image";
 import { Sign } from "./Sign";
 
+import {motion} from "framer-motion";
+
 const ownerId = "83082760"; // GitHub User ID, https://avatars.githubusercontent.com/u/83082760?v=4&w=48&q=75
 
 const loadingLoop = 3;
@@ -28,7 +30,7 @@ export const Guestbook = () => {
         const messageData = doc.data();
         messagesData.push(messageData);
       });
-      messagesData.sort((a, b) => b.time - a.time);
+      messagesData.sort((a, b) => b.time - a.time); // sort by the timestamp
       setMessages(messagesData);
       setLoading(false);
     };
@@ -99,7 +101,12 @@ export const Guestbook = () => {
         ) : (
           <>
             {messages.map((message, index) => (
-              <div className="flex flex-col space-y-4" key={index}>
+              <motion.div
+                className="flex flex-col space-y-4" key={index}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 100 }}                
+                transition={{delay: (index*0.1), duration: 0.2}}
+              >
                 <div className="flex items-center space-x-4">
                   <Image
                     src={message.image}
@@ -136,7 +143,7 @@ export const Guestbook = () => {
                     <p className="text-gray-300">{message.message}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </>
         )}
