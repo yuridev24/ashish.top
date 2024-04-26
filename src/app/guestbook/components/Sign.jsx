@@ -16,7 +16,7 @@ export const Sign = () => {
   const [message, setMessage] = useState("");
   const handleSignSubmit = (e) => {
     e.preventDefault();
-    if (!message.trim() === "") {
+    if (message.trim() != "") {
       setMessages([
         {
           img: "/images/icon.png",
