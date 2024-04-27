@@ -37,6 +37,8 @@ export async function generateMetadata({ params }) {
         {
           url: post.coverImage.url,
           alt: post.title,
+          width: 833,
+          height: 500,
         },
       ],
     },
