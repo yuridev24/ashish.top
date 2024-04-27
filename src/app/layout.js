@@ -29,6 +29,7 @@ export const metadata = {
     images: [
       {
         url: "https://ashishagr.vercel.app/meta.png",
+        alt: "Ashish Agarwal",
         width: 1366,
         height: 443,
       },

@@ -90,7 +90,7 @@ export const Guestbook = () => {
                 <div className="flex items-center space-x-4">
                   <div className="bg-gray-300 rounded-full w-12 h-12"></div>
                   <div>
-                    <h1 class="w-40 h-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
+                    <h1 className="w-40 h-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-2 mt-2 mb-1 w-96"></div>
                     <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-2 my-1 w-96"></div>
                   </div>
@@ -118,7 +118,7 @@ export const Guestbook = () => {
                   <div>
                     <a
                       href={message.github}
-                      target="_blank"
+                      target={(message.github.startsWith("https://github.com/")) ? "_blank" : ""}
                       className="text-lg font-medium inline cursor-pointer hover:text-[#1d9bf0] transition duration-75"
                     >
                       {message.name}{" "}

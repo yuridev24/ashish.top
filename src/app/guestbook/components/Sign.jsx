@@ -4,6 +4,9 @@ import { useState } from "react";
 import firebaseApp from "../../../lib/firebase";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { AuthButton } from "./AuthButton";
 
 export const Sign = ({ onSignSubmit }) => {
   onSignSubmit = onSignSubmit || (() => {});
@@ -14,6 +17,7 @@ export const Sign = ({ onSignSubmit }) => {
   const getGithubData = async () => {
     try {
       const imageUrl = session?.user?.image;
+      if(!imageUrl.startsWith("https://avatars.githubusercontent.com/u/")) return "#";
       const regex = /\/u\/(\d+)\?/;
       const match = imageUrl.match(regex);
       const userID = match ? match[1] : null;
@@ -33,7 +37,6 @@ export const Sign = ({ onSignSubmit }) => {
       const messageRef = collection(db, "messages");
       if (message.trim() !== "") {
         await addDoc(messageRef, {
-          email: session?.user?.email,
           name: session?.user?.name,
           image: session?.user?.image,
           message: message,
@@ -41,7 +44,6 @@ export const Sign = ({ onSignSubmit }) => {
           github: id,
         });
         onSignSubmit({
-          email: session?.user?.email,
           name: session?.user?.name,
           image: session?.user?.image,
           message: message,
@@ -57,6 +59,7 @@ export const Sign = ({ onSignSubmit }) => {
   if (session) {
     return (
       <>
+        {JSON.stringify(session)}
         <div className="md:flex md:flex-row w-full mb-8 text-lg">
           <form className="w-full" onSubmit={handleWriteMessage}>
             <input
@@ -88,12 +91,17 @@ export const Sign = ({ onSignSubmit }) => {
     );
   }
   return (
-    <div
-      className="text-zinc-300 cursor-pointer"
-      onClick={() => signIn("github")}
-    >
-      <span className="text-blue-500 hover:underline mb-4">Sign in</span> to
-      leave a message.
+    <div className="flex flex-row w-full mb-8 text-lg gap-2">
+      <AuthButton
+        title="Sign in with GitHub"
+        file="github"
+        onClick={() => signIn("github")}
+      />
+      <AuthButton
+        title="Sign in with Google"
+        file="google"
+        onClick={() => signIn("google")}
+      />
     </div>
   );
 };
