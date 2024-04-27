@@ -91,7 +91,7 @@ export const Sign = ({ onSignSubmit }) => {
     );
   }
   return (
-    <div className="flex flex-row w-full mb-8 text-lg gap-2">
+    <div className="md:flex flex-row w-full mb-8 text-lg md:gap-2">
       <AuthButton
         title="Sign in with GitHub"
         file="github"

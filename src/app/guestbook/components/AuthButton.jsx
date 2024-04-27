@@ -9,7 +9,7 @@ export const AuthButton = ({title, file, onClick}) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.1 }}
-      className="focus:outline-none"
+      className="focus:outline-none my-1 md:my-0"
       title={title}
       onClick={onClick}
     >
@@ -19,7 +19,7 @@ export const AuthButton = ({title, file, onClick}) => {
         </div>
         <div className="absolute inset-0.5 rounded-full bg-zinc-900" />
         <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-white/10 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-100" />
-        <span className="font-mona relative mt-px flex items-center space-x-4 bg-gradient-to-b from-white/25 to-white bg-clip-text font-medium text-transparent transition-all duration-200 md:text-lg">
+        <span className="font-mona relative mt-px flex items-center space-x-4 bg-gradient-to-b from-white/25 to-white bg-clip-text font-medium text-transparent transition-all duration-200 text-base md:text-lg">
           <Image
             src={`/images/icons/${file}.svg`}
             alt="GitHub"

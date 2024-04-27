@@ -78,11 +78,24 @@ export const Guestbook = () => {
     }
   };
 
+  const getTime = (timestamp) => {
+    const date = new Date(timestamp);
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    };
+    return date.toLocaleString("en-US", options);
+  };
+
   return (
     <>
       <Sign onSignSubmit={handleSignSubmit} />
 
-      <div className={`flex flex-col my-4 ` + ((loading) ? "gap-2" : "gap-6")}>
+      <div className={`flex flex-col my-4 ` + (loading ? "gap-2" : "gap-6")}>
         {loading ? (
           Array.from({ length: loadingLoop }).map((_, index) => (
             <div className="gap-6 flex flex-col my-4 animate-pulse" key={index}>
@@ -102,23 +115,37 @@ export const Guestbook = () => {
           <>
             {messages.map((message, index) => (
               <motion.div
-                className="flex flex-col space-y-4" key={index}
+                className="flex flex-col space-y-4"
+                key={index}
                 initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 100 }}                
-                transition={{delay: (index*0.1), duration: 0.2}}
+                animate={{ y: 0, opacity: 100 }}
+                transition={{ delay: index * 0.1, duration: 0.2 }}
               >
                 <div className="flex items-center space-x-4">
-                  <Image
-                    src={message.image}
-                    alt="Profile Picture"
-                    className="rounded-full"
-                    width={48}
-                    height={48}
-                  />
+                  <a
+                    href={message.github}
+                    target={
+                      message.github.startsWith("https://github.com/")
+                        ? "_blank"
+                        : ""
+                    }
+                  >
+                    <Image
+                      src={message.image}
+                      alt="Profile Picture"
+                      className="rounded-full"
+                      width={48}
+                      height={48}
+                    />
+                  </a>
                   <div>
                     <a
                       href={message.github}
-                      target={(message.github.startsWith("https://github.com/")) ? "_blank" : ""}
+                      target={
+                        message.github.startsWith("https://github.com/")
+                          ? "_blank"
+                          : ""
+                      }
                       className="text-lg font-medium inline cursor-pointer hover:text-[#1d9bf0] transition duration-75"
                     >
                       {message.name}{" "}
@@ -138,7 +165,10 @@ export const Guestbook = () => {
                       </>
                     )}
                     <h2 className="text-base font-medium text-gray-400 inline">
-                      {parseTime(message.time)}
+                      {parseTime(message.time)}{" "}
+                      <span className="text-xs text-gray-500">
+                        ~ {getTime(message.time)}
+                      </span>
                     </h2>
                     <p className="text-gray-300">{message.message}</p>
                   </div>
