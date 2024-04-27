@@ -58,7 +58,7 @@ export const Sign = ({ onSignSubmit }) => {
     return (
       <>
         <div className="md:flex md:flex-row w-full mb-8 text-lg">
-          <form className="w-full" onSubmit={handleWriteMessage}>
+          <form className="w-full" onSubmit={handleWriteMessage} autoComplete="new-password" autoFill="off">
             <input
               type="text"
               className="bg-zinc-700 focus:outline-none focus:ring-[#2ab9c9] focus:ring-2 form-input px-4 py-3 rounded-full w-full md:w-auto"
@@ -68,7 +68,7 @@ export const Sign = ({ onSignSubmit }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               disabled={loading}
-              autoComplete={false}
+              autoComplete="new-password"
             />
             <button
               type="submit"
