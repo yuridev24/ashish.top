@@ -44,3 +44,6 @@ img, svg, i, header, nav, footer, button{
 .article_contents code::before, .article_contents code::after{
     content: "";
 }
+.tag{
+    @apply bg-primary-700 even:bg-primary-800 select-none text-white px-2 py-1 rounded-md cursor-pointer transition duration-100 scale-100 hover:scale-105 active:scale-95;
+}

@@ -6,8 +6,8 @@ export const Skill = ({ name, file, type, href = "" }) => {
       <motion.div
         className={
           `select-none group ` +
-          `hover:bg-gradient-to-r hover:from-secondary-500 hover:via-secondary-600 hover:to-secondary-500` +
-          ` cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-[#0a0a0a] border border-[#171717]`
+          `hover:bg-gradient-to-r hover:from-dark-500 hover:via-dark-600 hover:to-dark-500` +
+          ` cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-dark-950 border border-dark-800`
         }
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 1 }}

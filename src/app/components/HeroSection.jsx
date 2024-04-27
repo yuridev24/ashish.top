@@ -87,8 +87,8 @@ const HeroSection = () => {
               </button>
             </Link>
             <Link href="#about">
-              <button className="group transition duration-200 px-1 py-1 w-full sm:w-fit rounded-full group-hover:bg-gradient-to-br group-hover:from-primary-500 group-hover:to-secondary-500 bg-slate-800 text-white mt-3 opacity-90">
-                <span className="block group-hover:bg-slate-900 rounded-full px-5 py-2 opacity-90 transition duration-200">
+              <button className="group transition duration-200 px-1 py-1 w-full sm:w-fit rounded-full group-hover:bg-gradient-to-br group-hover:from-primary-500 group-hover:to-secondary-500 text-white mt-3 opacity-90">
+                <span className="block group-hover:bg-dark-900 rounded-full px-5 py-2 opacity-90 transition duration-200">
                   Know me more{" "}
                   <ArrowRightIcon className="w-4 inline group-hover:translate-x-[4px] transition-transform" />
                 </span>
