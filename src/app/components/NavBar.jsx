@@ -59,7 +59,7 @@ export const NavBar = () => {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <li key={index} className="hidden lg:block">
+              <li key={index} className="block">
                 <NavLink title={link.title} href={link.path} active={route === link.path} />
               </li>
             ))}
