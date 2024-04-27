@@ -105,7 +105,7 @@ export const Guestbook = () => {
                   <div>
                     <h1 className="w-40 h-4 bg-gray-200 rounded-lg dark:bg-gray-700"></h1>
                     <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-2 mt-2 mb-1 w-96"></div>
-                    <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-2 my-1 w-96"></div>
+                    <div className="bg-gray-200 dark:bg-gray-700 rounded-lg h-2 my-1 w-[300px]"></div>
                   </div>
                 </div>
               </div>
