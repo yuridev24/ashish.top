@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import GithubIcon from "/public/github-icon.svg";
 import NavLink from "./NavLink";
@@ -23,14 +23,15 @@ const navLinks = [
   {
     title: "Guestbook",
     path: "/guestbook",
-  }
+  },
 ];
 
 export const NavBar = () => {
   const route = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 bg-[#121212] z-[99]">
+    <nav className="fixed mx-auto border border-dark-900 top-0 left-0 right-0 bg-dark-900 z-[99]">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
@@ -60,19 +61,29 @@ export const NavBar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index} className="block">
-                <NavLink title={link.title} href={link.path} active={route === link.path} />
+                <NavLink
+                  title={link.title}
+                  href={link.path}
+                  active={route === link.path ? true : (link.path === "/" && route !== "/") ? false : route.startsWith(link.path)}
+                />
               </li>
             ))}
             <motion.li
-				className={"transition"}
-				whileHover={{scale: "1.1"}}
-				whileTap={{scale: "1.05"}}
-				transition={{duration: 0.1}}>
+              className={"transition"}
+              whileHover={{ scale: "1.1" }}
+              whileTap={{ scale: "1.05" }}
+              transition={{ duration: 0.1 }}
+            >
               <Link
                 href="https://github.com/ashishagarwal2023"
                 className="hover:opacity-80 transition duration-200 w-32 h-32"
               >
-                <Image src={GithubIcon} alt="GitHub Icon" width={32} height={32} />
+                <Image
+                  src={GithubIcon}
+                  alt="GitHub Icon"
+                  width={32}
+                  height={32}
+                />
               </Link>
             </motion.li>
           </ul>
