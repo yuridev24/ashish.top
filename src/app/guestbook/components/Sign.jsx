@@ -68,6 +68,7 @@ export const Sign = ({ onSignSubmit }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               disabled={loading}
+              autoComplete={false}
             />
             <button
               type="submit"
