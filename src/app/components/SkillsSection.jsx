@@ -41,6 +41,11 @@ export const SkillsSection = () => {
       file: "firebase.svg"
     },
     {
+      name: "Python",
+      type: "Language",
+      file: "python.svg",
+    },
+    {
       name: "R",
       type: "Language",
       file: "r.png",
