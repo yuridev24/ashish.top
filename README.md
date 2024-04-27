@@ -2,7 +2,7 @@
 This is my portfolio I built using NextJS. For this, I used several libraries. The form depends on Web3Forms because it was the free one to me (althought it has limits).
 
 > New features:
-> - Blog
+> - Blog (Hashnode Headless)
 > - Guestbook
 > - ...etc
 
