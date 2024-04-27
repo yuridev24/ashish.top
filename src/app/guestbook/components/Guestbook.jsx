@@ -166,7 +166,7 @@ export const Guestbook = () => {
                     )}
                     <h2 className="text-base font-medium text-gray-400 inline">
                       {parseTime(message.time)}{" "}
-                      <span className="text-xs text-gray-500">
+                      <span className="hidden md:inline text-xs text-gray-500">
                         ~ {getTime(message.time)}
                       </span>
                     </h2>
