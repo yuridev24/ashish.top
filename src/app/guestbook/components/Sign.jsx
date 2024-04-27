@@ -4,8 +4,6 @@ import { useState } from "react";
 import firebaseApp from "../../../lib/firebase";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { AuthButton } from "./AuthButton";
 
 export const Sign = ({ onSignSubmit }) => {
@@ -17,7 +15,8 @@ export const Sign = ({ onSignSubmit }) => {
   const getGithubData = async () => {
     try {
       const imageUrl = session?.user?.image;
-      if(!imageUrl.startsWith("https://avatars.githubusercontent.com/u/")) return "#";
+      if (!imageUrl.startsWith("https://avatars.githubusercontent.com/u/"))
+        return "#";
       const regex = /\/u\/(\d+)\?/;
       const match = imageUrl.match(regex);
       const userID = match ? match[1] : null;
@@ -56,10 +55,9 @@ export const Sign = ({ onSignSubmit }) => {
       console.error("Error submitting: " + error);
     }
   };
-  if (session) {
-    return (
-      <>
-        {/* {JSON.stringify(session)} */}
+  return (
+    <>
+      {session ? (
         <div className="md:flex md:flex-row w-full mb-8 text-lg">
           <form className="w-full" onSubmit={handleWriteMessage}>
             <input
@@ -87,21 +85,20 @@ export const Sign = ({ onSignSubmit }) => {
             Sign out
           </button>
         </div>
-      </>
-    );
-  }
-  return (
-    <div className="md:flex flex-row w-full mb-8 text-lg md:gap-2">
-      <AuthButton
-        title="Sign in with GitHub"
-        file="github"
-        onClick={() => signIn("github")}
-      />
-      <AuthButton
-        title="Sign in with Google"
-        file="google"
-        onClick={() => signIn("google")}
-      />
-    </div>
+      ) : (
+        <div className="md:flex flex-row w-full mb-8 text-lg md:gap-2">
+          <AuthButton
+            title="Sign in with GitHub"
+            file="github"
+            onClick={() => signIn("github")}
+          />
+          <AuthButton
+            title="Sign in with Google"
+            file="google"
+            onClick={() => signIn("google")}
+          />
+        </div>
+      )}
+    </>
   );
 };
