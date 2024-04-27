@@ -47,6 +47,9 @@ export async function getPostBySlug(slug) {
             id
             publishedAt
             title
+            updatedAt
+            publishedAt
+            subtitle
           }
         }
       }
