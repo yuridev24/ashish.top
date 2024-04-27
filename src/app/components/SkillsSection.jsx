@@ -31,9 +31,14 @@ export const SkillsSection = () => {
     },
 
     {
-      name: "SQL",
+      name: "MySQL",
       type: "Language",
       file: "sqlite.png",
+    },
+    {
+      name: "Firebase",
+      type: "Collection of libraries",
+      file: "firebase.svg"
     },
     {
       name: "R",
