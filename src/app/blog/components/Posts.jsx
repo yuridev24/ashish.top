@@ -7,7 +7,7 @@ export const Posts = async () => {
     query: `
       query($host: String!) {
         publication(host: $host) {
-          posts(first: 10) {
+          posts(first: 20) {
             edges {
               node {
                 coverImage {
