@@ -33,7 +33,7 @@ export const SkillsSection = () => {
     {
       name: "MySQL",
       type: "Language",
-      file: "sqlite.png",
+      file: "mysql.svg",
     },
     {
       name: "Firebase",
@@ -44,6 +44,11 @@ export const SkillsSection = () => {
       name: "Python",
       type: "Language",
       file: "python.svg",
+    },
+    {
+      name: "jQuery",
+      type: "JavaScript Library",
+      file: "jquery.svg",
     },
     {
       name: "R",
@@ -81,8 +86,23 @@ export const SkillsSection = () => {
       file: "figma.png",
     },
     {
-      name: "TailwindCSS",
-      type: "CSS Framework",
+      name: "Bootstrap",
+      type: "CSS Library",
+      file: "bootstrap.svg",
+    },
+    {
+      name: "CSS",
+      type: "Design Language",
+      file: "css.svg",
+    },
+    {
+      name: "Markdown",
+      type: "Markup Language",
+      file: "markdown.svg"
+    },
+    {
+      name: "Tailwind CSS",
+      type: "CSS Library",
       file: "tailwindcss.png",
     },
     {

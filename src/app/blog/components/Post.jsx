@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-export const Post = ({ imgUrl, title, url, index, desc }) => {
+export const Post = ({ imgUrl, title, url, index, desc, date }) => {
   const [indexCount, setIndexCount] = useState(index);
   const handleDone = () => {
     setIndexCount(0);
@@ -27,7 +27,7 @@ export const Post = ({ imgUrl, title, url, index, desc }) => {
           <div className="px-4 py-2">
             <p className="text-md mb-0.5">{title}</p>
             <p className="mb-1 text-sm text-[#737373] group-hover:text-white">
-              {desc}
+              {desc} - {date}
             </p>
           </div>
           <img

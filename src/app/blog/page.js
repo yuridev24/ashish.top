@@ -5,9 +5,8 @@ import { Posts } from "./components/Posts";
 export default async function Blog() {
   return (
     <>
-      <Heading />
-      <Posts />
       <NewsLetter />
+      <Posts />
     </>
   );
 }

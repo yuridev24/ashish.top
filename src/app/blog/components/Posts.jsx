@@ -17,6 +17,7 @@ export const Posts = async () => {
                 slug
                 title
                 subtitle
+                publishedAt
               }
             }
           }
@@ -37,6 +38,11 @@ export const Posts = async () => {
           imgUrl={post.coverImage.url}
           title={post.title}
           index={index}
+          date={new Date(post.publishedAt).toLocaleDateString('en-US', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
           desc={post.subtitle}
         />
       ))}
