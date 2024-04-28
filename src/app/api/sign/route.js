@@ -16,7 +16,7 @@ export async function POST(req) {
     }
 
     const currentTime = new Date().getTime();
-    const rateLimitDuration = 60 * 1000;
+    const rateLimitDuration = 60 * 60 * 1000;
     const rateLimitCount = 3;
     const userMessagesQuery = query(messageRef, where("github", "==", id), where("time", ">=", currentTime - rateLimitDuration));
     const userMessagesSnapshot = await getDocs(userMessagesQuery);
