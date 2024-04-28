@@ -1,16 +1,13 @@
-export async function query({ query, variables, tags }) {
+export async function query({ query, variables }) {
   const data = await fetch("https://gql.hashnode.com", {
     method: "POST",
+    cache: "no-store",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query,
       variables,
-      next: {
-        tags,
-        cache: "no-store"
-      },
     }),
   }).then((r) => r.json());
   return data;
