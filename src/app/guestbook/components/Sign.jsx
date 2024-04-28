@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import firebaseApp from "../../../lib/firebase";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { AuthButton } from "./AuthButton";
+import getGithubData from "./getGithubData";
 
 export const Sign = ({ onSignSubmit }) => {
   onSignSubmit = onSignSubmit || (() => {});
@@ -12,27 +13,12 @@ export const Sign = ({ onSignSubmit }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const getGithubData = async () => {
-    try {
-      const imageUrl = session?.user?.image;
-      if (!imageUrl.startsWith("https://avatars.githubusercontent.com/u/"))
-        return "#";
-      const regex = /\/u\/(\d+)\?/;
-      const match = imageUrl.match(regex);
-      const userID = match ? match[1] : null;
-      const response = await fetch(`https://api.github.com/user/${userID}`);
-      const data = await response.json();
-      return data.html_url;
-    } catch (error) {
-      console.error("Error fetching GitHub data: " + error);
-    }
-  };
-
   const handleWriteMessage = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const db = getFirestore(firebaseApp);
-      const id = await getGithubData();
+      const id = await getGithubData(session?.user?.image);
       const messageRef = collection(db, "messages");
       if (message.trim() !== "") {
         await addDoc(messageRef, {
@@ -54,6 +40,7 @@ export const Sign = ({ onSignSubmit }) => {
     } catch (error) {
       console.error("Error submitting: " + error);
     }
+    setLoading(false);
   };
   return (
     <>
@@ -71,14 +58,9 @@ export const Sign = ({ onSignSubmit }) => {
               disabled={loading}
               autoComplete="off"
             />
-            {/* <button
-              type="submit"
-              className="md:ml-4 bg-[#2ab9c9] focus:outline-none focus:ring-2 focus:ring-[#134449] px-4 py-3 rounded-full w-full md:w-[100px] mt-4 md:m-0 hover:opacity-80 transition duration-100"
-            >
-              Sign
-            </button> */}
             <button
               type="submit"
+              disabled={loading}
               className="md:ml-4 bg-blue-500 flex-auto shadow text-white rounded-full border-y px-4 py-3 w-full md:w-[100px] mt-4 md:m-0 border-transparent font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 dark:focus:ring-offset-slate-900 dark:focus:ring-blue-700"
             >
               Sign
