@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import firebaseApp from "../../../lib/firebase";
 import Image from "next/image";
 import { Sign } from "./Sign";
 
 import {motion} from "framer-motion";
+import { getGuestbook } from "./getGuestbook";
 
 const ownerId = "83082760"; // GitHub User ID, https://avatars.githubusercontent.com/u/83082760?v=4&w=48&q=75
 
@@ -18,20 +17,8 @@ export const Guestbook = () => {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const db = getFirestore(firebaseApp);
-      const messagesRef = collection(db, "messages");
-      const messagesSnapshot = await getDocs(messagesRef);
-
       setLoading(true);
-
-      const messagesData = [];
-
-      messagesSnapshot.forEach((doc) => {
-        const messageData = doc.data();
-        messagesData.push(messageData);
-      });
-      messagesData.sort((a, b) => b.time - a.time); // sort by the timestamp
-      setMessages(messagesData);
+      setMessages(await getGuestbook());
       setLoading(false);
     };
 
