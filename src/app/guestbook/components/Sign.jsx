@@ -41,7 +41,7 @@ export const Sign = ({ onSignSubmit }) => {
               });
             } else {
               if (data.error === "Rate limited") {
-                setError("You are rate limited. Please try again later.");
+                setError("You are being rate limited. Please try again later.");
               } else {
                 if(data.error === "Internal Server Error") {
                   setError("Internal Server Error");
