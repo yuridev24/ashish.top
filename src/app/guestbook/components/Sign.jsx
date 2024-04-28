@@ -71,16 +71,22 @@ export const Sign = ({ onSignSubmit }) => {
               disabled={loading}
               autoComplete="off"
             />
-            <button
+            {/* <button
               type="submit"
               className="md:ml-4 bg-[#2ab9c9] focus:outline-none focus:ring-2 focus:ring-[#134449] px-4 py-3 rounded-full w-full md:w-[100px] mt-4 md:m-0 hover:opacity-80 transition duration-100"
+            >
+              Sign
+            </button> */}
+            <button
+              type="submit"
+              className="md:ml-4 bg-blue-500 flex-auto shadow text-white rounded-full border-y px-4 py-3 w-full md:w-[100px] mt-4 md:m-0 border-transparent font-semibold hover:bg-blue-600 dark:hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 dark:focus:ring-offset-slate-900 dark:focus:ring-blue-700"
             >
               Sign
             </button>
           </form>
           <button
             onClick={() => signOut()}
-            className="md:ml-4 bg-[#c92a2a] focus:outline-none focus:ring-2 focus:ring-[#491313] px-4 py-3 rounded-full w-full md:w-[200px] mt-4 md:mt-0 hover:opacity-80 transition duration-100"
+            className="md:ml-4 bg-red-500 flex-auto shadow text-white rounded-full border-y px-4 py-3 w-full md:w-[200px] mt-4 md:m-0 border-transparent font-semibold hover:bg-red-600 dark:hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-300 dark:focus:ring-offset-slate-900 dark:focus:ring-red-700"
           >
             Sign out
           </button>
