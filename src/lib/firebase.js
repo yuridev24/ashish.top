@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCD-odyKJtRgYoHFtM7BG341yHDC7yYzxA",
-  authDomain: "portfolio-guestbook-2625d.firebaseapp.com",
-  projectId: "portfolio-guestbook-2625d",
-  storageBucket: "portfolio-guestbook-2625d.appspot.com",
-  messagingSenderId: "835304602454",
-  appId: "1:835304602454:web:f8b6f53579fc23cdac34f7",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
