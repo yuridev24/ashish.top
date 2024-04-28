@@ -30,7 +30,7 @@ export const Posts = async () => {
   });
   const posts = publication.posts.edges.map(({ node }) => node);
   return (
-    <div className="mt-8 font-sans gap-4 flex flex-col">
+    <div className="mt-8 mb-4 font-sans gap-4 flex flex-col">
       {posts.map((post, index) => (
         <Post
           key={index}

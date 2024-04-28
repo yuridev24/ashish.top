@@ -16,7 +16,7 @@ export const BooksCard = ({ cover, name, desc, preview, buy }) => {
       transition={{ duration: 0.1 }}
     >
       <Link
-        className="group block w-full bg-[#0a0a0a] hover:bg-primary-500"
+        className="group block w-full bg-dark-900 hover:bg-primary-500"
         href={preview}
         target="_blank"
       >

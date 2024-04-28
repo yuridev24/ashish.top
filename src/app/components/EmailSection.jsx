@@ -126,7 +126,7 @@ export const EmailSection = () => {
               <label
                 htmlFor="message"
                 className="text-white block text-sm mb-2 font-medium"
-              ></label>
+              >Message</label>
               <textarea
                 name="message"
                 id="message"

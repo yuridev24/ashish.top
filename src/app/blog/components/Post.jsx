@@ -20,7 +20,7 @@ export const Post = ({ imgUrl, title, url, index, desc, date }) => {
       transition={{ duration: 0.1, delay: indexCount / 8 }}
     >
       <Link
-        className="group block w-full bg-[#0a0a0a] hover:bg-primary-500 cursor-pointer"
+        className="group block w-full bg-dark-700 hover:bg-primary-500 cursor-pointer"
         href={!(url === "") && url}
       >
         <div className="flex justify-between">
