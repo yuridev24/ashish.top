@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import firebaseApp from "../../../lib/firebase";
+import { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { AuthButton } from "./AuthButton";
 import getGithubData from "./getGithubData";
 
@@ -17,24 +15,33 @@ export const Sign = ({ onSignSubmit }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const db = getFirestore(firebaseApp);
       const id = await getGithubData(session?.user?.image);
-      const messageRef = collection(db, "messages");
       if (message.trim() !== "") {
-        await addDoc(messageRef, {
-          name: session?.user?.name,
-          image: session?.user?.image,
-          message: message,
-          time: new Date().getTime(),
-          github: id,
-        });
-        onSignSubmit({
-          name: session?.user?.name,
-          image: session?.user?.image,
-          message: message,
-          time: new Date().getTime(),
-          github: id,
-        });
+        fetch("/api/sign", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: session?.user?.name,
+            image: session?.user?.image,
+            message: message,
+            id: id,
+          }),
+        }).then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              onSignSubmit({
+                name: session?.user?.name,
+                image: session?.user?.image,
+                message: message,
+                time: new Date().getTime(),
+                github: id,
+              });
+            } else {
+              console.error("Error signing: " + data.error);
+            }
+          });
         setMessage("");
       }
     } catch (error) {
