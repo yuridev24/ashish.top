@@ -85,7 +85,7 @@ export const EmailSection = () => {
                 name="email"
                 type="email"
                 id="email"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                className="bg-dark-950 border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
                 required
                 placeholder="hello@ashishagr.is-a.dev"
               />
@@ -101,7 +101,7 @@ export const EmailSection = () => {
                 name="name"
                 type="text"
                 id="name"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                className="bg-dark-950 border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
                 required
                 placeholder="Ashish Agarwal"
               />
@@ -117,7 +117,7 @@ export const EmailSection = () => {
                 name="subject"
                 type="text"
                 id="subject"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                className="bg-dark-950 border border-[#33353F] placeholder-[#93A2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
                 required
                 placeholder="Just saying hi"
               />
@@ -130,7 +130,7 @@ export const EmailSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
+                className="bg-dark-950 border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline focus:outline-primary-500"
                 placeholder="Let's talk about..."
               />
             </div>

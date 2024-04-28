@@ -52,7 +52,6 @@ export const Guestbook = () => {
     const days = Math.floor(hours / 24);
     const months = Math.floor(days / 30);
     const years = Math.floor(months / 12);
-
     if (seconds < 60) {
       return "Just now";
     } else if (minutes === 1) {
@@ -60,7 +59,7 @@ export const Guestbook = () => {
     } else if (minutes < 60) {
       return `${minutes} minutes ago`;
     } else if (hours === 1) {
-      return "A hour ago";
+      return "An hour ago";
     } else if (hours < 24) {
       return `${hours} hours ago`;
     } else if (days === 1) {
