@@ -3,8 +3,6 @@ import { inter } from "./fonts.js"
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 
-import AnimatedCursor from "react-animated-cursor";
-
 export const metadata = {
   title: "Ashish Agarwal",
   description:
@@ -48,21 +46,6 @@ export default function RootLayout({ children }) {
           <NavBar />
           <div className="container mx-auto py-4 px-12 mt-24">{children}</div>
           <Footer />
-          <AnimatedCursor
-            color={"191, 83, 0"}
-            innerSize={8}
-            outerSize={35}
-            innerScale={1}
-            outerScale={2}
-            outerAlpha={0}
-            hasBlendMode={true}
-            innerStyle={{
-              backgroundColor: "var(--cursor-color)",
-            }}
-            outerStyle={{
-              border: "3px solid var(--cursor-color)",
-            }}
-          />
         </main>
       </body>
     </html>
