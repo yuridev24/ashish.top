@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 
-export const Skill = ({ name, file, type, href = "" }) => {
+export const Skill = ({ name, file, type, href = "", drag=null }) => {
   return (
     <a
       href={!(href === "") ? href : undefined}
       target={href === "" ? undefined : "_blank"}
     >
       <motion.div
-        className={
-          `select-none group hover:bg-gradient-to-r hover:from-dark-500 hover:via-dark-600 hover:to-dark-500 cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-dark-950 border border-dark-800`
-        }
+        className={`select-none group hover:bg-gradient-to-r hover:from-dark-500 hover:via-dark-600 hover:to-dark-500 cursor-pointer flex flex-row items-center justify-center gap-4 px-4 py-2 bg-dark-950 border border-dark-800`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 1 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.1 }}
+        drag={drag != null}
+        dragConstraints={drag}
+        dragTransition={{ bounceStiffness: 200, bounceDamping: 50, dragElastic: 0.1 }}
+        dragSnapToOrigin={true}
+        transition={{ duration: 0.075 }}
       >
         <img className="h-auto w-8" src={`/images/icons/${file}`} alt={name} />
         <p className="self-stretch w-[1px] bg-[#171717]"></p>

@@ -136,8 +136,19 @@ export const SkillsSection = () => {
           skills
         </span>
       </h2>
-      <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {skills.map((skill, index) => <Skill key={index} name={skill.name} file={skill.file} type={skill.type} /> )}
+      <div
+        className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        style={{ maxHeight: "100%", maxWidth: "100%" }}
+      >
+        {skills.map((skill, index) => (
+          <Skill
+            key={index}
+            name={skill.name}
+            file={skill.file}
+            type={skill.type}
+            drag={null}
+          />
+        ))}
       </div>
     </section>
   );
