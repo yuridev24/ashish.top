@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { addDoc, collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 import firebaseApp from "../../../lib/firebase";
 
+import getGithubData from "../../../lib/getGithubData";
+
 import { getToken } from "next-auth/jwt";
 
 const db = getFirestore(firebaseApp);
@@ -11,7 +13,9 @@ export async function POST(req) {
   try {
     const { message } = await req.json();
     
-    const { id, name, image } = await getToken({ req });
+    const { name, image } = await getToken({ req });
+
+    const id = await getGithubData(image);
 
     if (!message) {
       return NextResponse.json({

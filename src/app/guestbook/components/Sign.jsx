@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { AuthButton } from "./AuthButton";
-import getGithubData from "./getGithubData";
 
 export const Sign = ({ onSignSubmit }) => {
   onSignSubmit = onSignSubmit || (() => {});
