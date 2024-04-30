@@ -13,7 +13,9 @@ export async function POST(req) {
   try {
     const { message } = await req.json();
     
-    const { name, image } = await getToken({ req });
+    const data = await getToken({ req });
+    const name = data.name;
+    const image = data.image;
 
     const id = await getGithubData(image);
 
