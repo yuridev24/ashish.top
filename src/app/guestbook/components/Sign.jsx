@@ -55,7 +55,6 @@ export const Sign = ({ onSignSubmit }) => {
     <>
       {session ? (
         <>
-          {JSON.stringify(session)}
           <div className="md:flex md:flex-row w-full text-lg">
             <form className="w-full" onSubmit={handleWriteMessage}>
               <input
