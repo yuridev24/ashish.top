@@ -22,7 +22,7 @@ export async function POST(req) {
     if (!message) {
       return NextResponse.json({
         success: false,
-        error: "Missing required fields",
+        error: "Missing required field message",
       }, { status: 400 });
     }
 
