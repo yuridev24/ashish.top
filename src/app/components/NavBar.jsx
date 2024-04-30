@@ -47,7 +47,7 @@ export const NavBar = () => {
     <nav
       className={
         `transition-colors duration-75 fixed mx-auto top-0 left-0 right-0 z-[99] ` +
-        (navbarTop ? "bg-dark-900" : "bg-transparent")
+        (navbarTop ? "bg-dark-900 bg-opacity-80 backdrop-blur-sm" : "bg-transparent")
       }
     >
       <div
