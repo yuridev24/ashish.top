@@ -47,7 +47,9 @@ export const NavBar = () => {
     <nav
       className={
         `transition-colors duration-75 fixed mx-auto top-0 left-0 right-0 z-[99] ` +
-        (navbarTop ? "bg-dark-900 bg-opacity-80 backdrop-blur-sm" : "bg-transparent")
+        (navbarTop
+          ? "bg-dark-900 bg-opacity-80 backdrop-blur-sm"
+          : "bg-transparent")
       }
     >
       <div
@@ -97,10 +99,12 @@ export const NavBar = () => {
                 />
               </li>
             ))}
-            <motion.li
-              className={"transition"}
+            <motion.div
+              initial={{ x: 800 }}
+              animate={{ x: 0 }}
+              className={"transition scale-[1.05]"}
               whileHover={{ scale: "1.1" }}
-              whileTap={{ scale: "1.05" }}
+              whileTap={{ scale: "1" }}
               transition={{ duration: 0.1 }}
             >
               <Link
@@ -114,7 +118,7 @@ export const NavBar = () => {
                   height={32}
                 />
               </Link>
-            </motion.li>
+            </motion.div>
           </ul>
         </div>
       </div>
