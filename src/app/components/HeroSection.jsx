@@ -9,7 +9,7 @@ import {SkillLogo} from "@/app/components/SkillLogo";
 const HeroSection = () => {
   return (
     <section className="lg:py-4" id="home">
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center h-[50vh]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -24,7 +24,7 @@ const HeroSection = () => {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{duration:0.5, delay:0.5}}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               <TypeAnimation
                 sequence={[
@@ -59,18 +59,19 @@ const HeroSection = () => {
               India
             </span>
             . Lot knowledge in languages like JavaScript, Python, R, SQL, HTML,
-            CSS & Node.js. Experienced with frameworks like Next.js, Django and Flask.
-            With knowledge of libraries like Bootstrap, TailwindCSS and jQuery and tools like Git, Prettier, and a lot more & increasing.
+            CSS & Node.js. Experienced with frameworks like Next.js, Django and
+            Flask. With knowledge of libraries like Bootstrap, TailwindCSS and
+            jQuery and tools like Git, Prettier, and a lot more & increasing.
           </p>
-			<div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
-				<SkillLogo path={"javascript.png"} language={"JavaScript"} />
-				<SkillLogo path={"typescript.png"} language={"TypeScript"} />
-				<SkillLogo path={"react.png"} language={"React"} />
-				<SkillLogo path={"nextjs.svg"} language={"Next.js"} />
-				<SkillLogo path={"svelte.png"} language={"Svelte"} />
-				<SkillLogo path={"git.png"} language={"Git"}/>
-				<SkillLogo path={"tailwindcss.png"} language={"Tailwind CSS"} />
-			</div>
+          <div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
+            <SkillLogo path={"javascript.png"} language={"JavaScript"} />
+            <SkillLogo path={"typescript.png"} language={"TypeScript"} />
+            <SkillLogo path={"react.png"} language={"React"} />
+            <SkillLogo path={"nextjs.svg"} language={"Next.js"} />
+            <SkillLogo path={"svelte.png"} language={"Svelte"} />
+            <SkillLogo path={"git.png"} language={"Git"} />
+            <SkillLogo path={"tailwindcss.png"} language={"Tailwind CSS"} />
+          </div>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 100 }}
