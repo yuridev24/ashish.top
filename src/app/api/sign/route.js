@@ -2,13 +2,18 @@ import { NextResponse } from "next/server";
 import { addDoc, collection, getFirestore, query, where, getDocs } from "firebase/firestore";
 import firebaseApp from "../../../lib/firebase";
 
+import { getToken } from "next-auth/jwt";
+
 const db = getFirestore(firebaseApp);
 const messageRef = collection(db, "messages");
 
 export async function POST(req) {
   try {
-    const { name, image, message, id } = await req.json();
-    if (!name || !image || !message || !id) {
+    const { message } = await req.json();
+    
+    const { id, name, image } = await getToken({ req });
+
+    if (!message) {
       return NextResponse.json({
         success: false,
         error: "Missing required fields",
@@ -38,7 +43,7 @@ export async function POST(req) {
       github: id,
     });
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json({ success: true, id: id }, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({

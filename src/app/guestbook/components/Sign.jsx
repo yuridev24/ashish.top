@@ -16,7 +16,6 @@ export const Sign = ({ onSignSubmit }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const id = await getGithubData(session?.user?.image);
       if (message.trim() !== "") {
         fetch("/api/sign", {
           method: "POST",
@@ -24,10 +23,7 @@ export const Sign = ({ onSignSubmit }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: session?.user?.name,
-            image: session?.user?.image,
             message: message,
-            id: id,
           }),
         }).then((res) => res.json())
           .then((data) => {
@@ -37,7 +33,7 @@ export const Sign = ({ onSignSubmit }) => {
                 image: session?.user?.image,
                 message: message,
                 time: new Date().getTime(),
-                github: id,
+                github: data.id,
               });
             } else {
               if (data.error === "Rate limited") {
