@@ -2,6 +2,7 @@ import "./globals.css";
 import { inter } from "./fonts.js"
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
+import { ScrollTop } from "./components/ScrollTop";
 
 export const metadata = {
   title: "Ashish Agarwal",
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
           <NavBar />
           <div className="container mx-auto py-4 px-12 mt-24">{children}</div>
           <Footer />
+          <ScrollTop />
         </main>
       </body>
     </html>
