@@ -29,10 +29,33 @@ const navLinks = [
 export const NavBar = () => {
   const route = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarTop, setNavbarTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavbarTop(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed mx-auto border border-dark-900 top-0 left-0 right-0 bg-dark-900 z-[99]">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav
+      className={
+        `transition-colors duration-75 fixed mx-auto top-0 left-0 right-0 z-[99] ` +
+        (navbarTop ? "bg-dark-900" : "bg-transparent")
+      }
+    >
+      <div
+        className={
+          `transition-padding flex container flex-wrap items-center justify-between mx-auto px-4 py-2 ` +
+          (navbarTop ? "lg:py-4" : "lg:py-6 lg:px-6")
+        }
+      >
         <Link
           href={"/"}
           className={`text-xl md:text-2xl text-transparent bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text font-semibold ${poppins.className}`}
@@ -64,7 +87,13 @@ export const NavBar = () => {
                 <NavLink
                   title={link.title}
                   href={link.path}
-                  active={route === link.path ? true : (link.path === "/" && route !== "/") ? false : route.startsWith(link.path)}
+                  active={
+                    route === link.path
+                      ? true
+                      : link.path === "/" && route !== "/"
+                      ? false
+                      : route.startsWith(link.path)
+                  }
                 />
               </li>
             ))}
