@@ -26,7 +26,7 @@ export const Post = ({ imgUrl, title, url, index, desc, date }) => {
         <div className="flex justify-between">
           <div className="px-4 py-2">
             <p className="text-md mb-0.5">{title}</p>
-            <p className="mb-1 text-sm text-[#737373] group-hover:text-white">
+            <p className="mb-1 text-sm text-dark-200 group-hover:text-white">
               {desc} - {date}
             </p>
           </div>
