@@ -8,7 +8,7 @@ import {SkillLogo} from "@/app/components/SkillLogo";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-4" id="home">
+    <section className="lg:pt-4 lg:pb-8" id="home">
       <div className="flex flex-row justify-center h-[50vh]">
         <motion.div
           initial={{ opacity: 0 }}
