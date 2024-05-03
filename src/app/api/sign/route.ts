@@ -9,7 +9,7 @@ import { getToken } from "next-auth/jwt";
 const db = getFirestore(firebaseApp);
 const messageRef = collection(db, "messages");
 
-export async function POST(req) {
+export async function POST(req: any) {
   try {
     const { message } = await req.json();
     
