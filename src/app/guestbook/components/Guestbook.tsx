@@ -50,7 +50,7 @@ export const Guestbook = () => {
         ) : (
           <>
             {messages.map((msg, index) => (
-              <Guest message={msg} index={index} />
+              <Guest message={msg} key={index} index={index} />
             ))}
           </>
         )}
