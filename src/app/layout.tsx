@@ -1,5 +1,5 @@
 import "./globals.css";
-import { inter } from "./fonts.js"
+import { inter } from "./fonts.ts";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import { ScrollTop } from "./components/ScrollTop";
@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className="flex min-h-screen flex-col bg-dark-950">
           <NavBar />
-          <div className="container mx-auto py-4 px-12 mt-24">{children}</div>
+          <div className="container mx-auto py-4 px-12 mt-28 md:mt-24">{children}</div>
           <Footer />
           <ScrollTop />
         </main>

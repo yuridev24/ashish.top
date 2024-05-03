@@ -88,8 +88,8 @@ export const NewsLetter = () => {
               </p>
               <div className="px-2 grow flex mt-3">
                 <button
-                    type="submit"
-                    disabled={loading}
+                  type="submit"
+                  disabled={loading}
                   className="bg-primary-500 flex-auto shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-primary-600 dark:hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-300 dark:focus:ring-offset-slate-900 dark:focus:ring-primary-700"
                 >
                   Subscribe

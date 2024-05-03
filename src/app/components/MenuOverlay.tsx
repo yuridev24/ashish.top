@@ -29,10 +29,7 @@ const MenuOverlay = ({ links, action }) => {
           />
         </motion.li>
       ))}
-      <motion.li
-        className="my-[5vh] text-xl"
-        transition={{ duration: 0.3 }}
-      >
+      <motion.li className="my-[5vh] text-xl" transition={{ duration: 0.3 }}>
         <NavLink
           href={"https://github.com/ashishagarwal2023"}
           title={"GitHub"}
