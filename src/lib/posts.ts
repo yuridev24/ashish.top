@@ -19,11 +19,11 @@ export async function getAllPostSlugs() {
     `,
     variables: {},
   });
-  const slugs = user?.posts?.edges?.map((edge) => edge.node.slug) ?? [];
+  const slugs = user?.posts?.edges?.map((edge: any) => edge.node.slug) ?? [];
   return slugs;
 }
 
-export async function getPostBySlug(slug) {
+export async function getPostBySlug(slug: any) {
   const {
     data: { publication },
   } = await query({

@@ -1,6 +1,6 @@
 import { query } from "@/lib/hashnode";
 
-export async function getPageBySlug(slug) {
+export async function getPageBySlug(slug: any) {
   const {
     data: { publication },
   } = await query({

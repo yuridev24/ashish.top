@@ -1,6 +1,6 @@
 "use server";
 
-const getGithubData = async (image) => {
+const getGithubData = async (image: any) => {
   try {
     const imageUrl = image;
     if (!imageUrl.startsWith("https://avatars.githubusercontent.com/u/"))
