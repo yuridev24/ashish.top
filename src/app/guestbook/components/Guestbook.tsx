@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Sign } from "./Sign";
 
 import { getGuestbook } from "./getGuestbook";
@@ -24,7 +23,7 @@ export const Guestbook = () => {
   }, []);
 
   const handleSignSubmit = (newMessage: any) => {
-    setMessages((prevMessages: any[]) => [newMessage, ...prevMessages]);
+    setMessages((prevMessages: any) => [newMessage, ...prevMessages]);
   };
 
   return (
