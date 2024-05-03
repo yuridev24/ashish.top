@@ -18,12 +18,12 @@ export const NewsLetter = () => {
   const [success, setSuccess] = useState(false);
   const [emailClass, setEmailClass] = useState("text-white");
 
-  const handleSubmitMessage = (message, emailClass) => {
+  const handleSubmitMessage = (message: any, emailClass: any) => {
     setSubmitMessage(message);
     setEmailClass(emailClass);
   };
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     setLoading(true);
     const response = await subscribe(data.email);
     const parsedResponse = JSON.parse(response);
@@ -84,7 +84,7 @@ export const NewsLetter = () => {
                 </div>
               </div>
               <p className="text-red-500 pt-2 justify-center flex flex-row">
-                {errors.email?.message}
+                {errors?.email?.message}
               </p>
               <div className="px-2 grow flex mt-3">
                 <button
