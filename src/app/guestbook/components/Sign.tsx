@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { AuthButton } from "./AuthButton";
 
-export const Sign = ({ onSignSubmit }) => {
+export const Sign = ({ onSignSubmit }: any) => {
   onSignSubmit = onSignSubmit || (() => {});
   const { data: session } = useSession();
   const [message, setMessage] = useState("");
@@ -24,7 +24,8 @@ export const Sign = ({ onSignSubmit }) => {
           body: JSON.stringify({
             message: message,
           }),
-        }).then((res) => res.json())
+        })
+          .then((res) => res.json())
           .then((data) => {
             if (data.success) {
               onSignSubmit({
@@ -38,7 +39,7 @@ export const Sign = ({ onSignSubmit }) => {
               if (data.error === "Rate limited") {
                 setError("You are being rate limited. Please try again later.");
               } else {
-                if(data.error === "Internal Server Error") {
+                if (data.error === "Internal Server Error") {
                   setError("Internal Server Error");
                 }
               }
@@ -64,7 +65,10 @@ export const Sign = ({ onSignSubmit }) => {
                 placeholder="Leave a message"
                 name="message"
                 value={message}
-                onChange={(e) => { setMessage(e.target.value); setError("");}}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  setError("");
+                }}
                 disabled={loading}
                 autoComplete="off"
               />

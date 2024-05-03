@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ownerId = "83082760"; // GitHub User ID, https://avatars.githubusercontent.com/u/83082760?v=4&w=48&q=75
 
-const parseTime = (timestamp) => {
+const parseTime = (timestamp: number) => {
   const currentTime = new Date().getTime();
   const timeDifference = currentTime - timestamp;
 

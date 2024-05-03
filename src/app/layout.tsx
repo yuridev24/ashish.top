@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import { ScrollTop } from "./components/ScrollTop";
 
-export const metadata = {
+export const metadata: any = {
   title: "Ashish Agarwal",
   description:
     "I'm a programmer and a book author. I build things for the web at a young age.",
@@ -39,7 +39,7 @@ export const metadata = {
     type: "website",
   },
 };
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body className={inter.className}>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export const AuthButton = ({title, file, onClick}) => {
+export const AuthButton: any = ({title, file, onClick}: any) => {
   return (
     <motion.button
       initial={{ scale: 0.97 }}

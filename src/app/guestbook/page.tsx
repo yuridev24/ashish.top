@@ -3,7 +3,7 @@
 import { Guestbook } from "./components/Guestbook";
 import { SessionProvider } from "next-auth/react";
 
-const GuestBookPage = () => {
+const GuestBookPage: any = () => {
   return (
     <>
       <SessionProvider>
