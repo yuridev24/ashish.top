@@ -39,15 +39,14 @@ const parseTime = (timestamp: number) => {
     return `${years} years ago`;
   }
 };
-
 const getTime = (timestamp: number) => {
   const date = new Date(timestamp);
   const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
+    year: "numeric" as const,
+    month: "long" as const,
+    day: "numeric" as const,
+    hour: "numeric" as const,
+    minute: "numeric" as const,
     hour12: true,
   };
   return date.toLocaleString("en-US", options);
