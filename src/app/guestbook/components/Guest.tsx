@@ -40,7 +40,7 @@ const parseTime = (timestamp: number) => {
   }
 };
 
-const getTime = (timestamp) => {
+const getTime = (timestamp: number) => {
   const date = new Date(timestamp);
   const options = {
     year: "numeric",
@@ -53,7 +53,7 @@ const getTime = (timestamp) => {
   return date.toLocaleString("en-US", options);
 };
 
-export const Guest = ({ message, index }) => {
+export const Guest = ({ message, index }: any) => {
   return (
     <motion.div
       className="flex flex-col space-y-4"

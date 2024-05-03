@@ -23,8 +23,8 @@ export const Guestbook = () => {
     fetchMessages();
   }, []);
 
-  const handleSignSubmit = (newMessage) => {
-    setMessages((prevMessages) => [newMessage, ...prevMessages]);
+  const handleSignSubmit = (newMessage: any) => {
+    setMessages((prevMessages: any[]) => [newMessage, ...prevMessages]);
   };
 
   return (

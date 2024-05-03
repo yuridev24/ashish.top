@@ -1,6 +1,6 @@
 "use client";
 
-export async function subscribe(email) {
+export async function subscribe(email: string) {
   try {
     const requestBody = {
       query: `

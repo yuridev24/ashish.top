@@ -10,11 +10,11 @@ export const getGuestbook: any = async () => {
 
   const messagesData: any = [];
 
-  messagesSnapshot?.forEach((doc) => {
+  messagesSnapshot?.forEach((doc: any) => {
     const messageData: any = doc.data();
     messagesData?.push(messageData);
   });
-  messagesData?.sort((a, b) => b.time - a.time); // sort by the timestamp
+  messagesData?.sort((a: any, b: any) => b.time - a.time); // sort by the timestamp
 
   return messagesData;
 };
