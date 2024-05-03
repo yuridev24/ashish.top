@@ -28,20 +28,20 @@ export const Posts = async () => {
       host: process.env.HASHNODE_HOST
     }
   });
-  const posts = publication.posts.edges.map(({ node }) => node);
+  const posts = publication.posts.edges.map(({ node }: any) => node);
   return (
     <div className="mt-8 mb-4 font-sans gap-4 flex flex-col">
-      {posts.map((post, index) => (
+      {posts.map((post: any, index: any) => (
         <Post
           key={index}
           url={`/blog/${post.slug}`}
           imgUrl={post.coverImage.url}
           title={post.title}
           index={index}
-          date={new Date(post.publishedAt).toLocaleDateString('en-US', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
+          date={new Date(post.publishedAt).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
           })}
           desc={post.subtitle}
         />

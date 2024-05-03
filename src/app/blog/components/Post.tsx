@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-export const Post = ({ imgUrl, title, url, index, desc, date }) => {
+export const Post = ({ imgUrl, title, url, index, desc, date }: any) => {
   const [indexCount, setIndexCount] = useState(index);
   const handleDone = () => {
     setIndexCount(0);
