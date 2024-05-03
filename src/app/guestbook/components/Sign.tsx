@@ -11,7 +11,7 @@ export const Sign = ({ onSignSubmit }: any) => {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setError] = useState("");
 
-  const handleWriteMessage = async (e) => {
+  const handleWriteMessage = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     try {
