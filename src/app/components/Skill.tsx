@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export const Skill = ({ name, file, type, href = "", drag=null }) => {
+export const Skill = ({ name, file, type, href = "", drag = null }: any) => {
   return (
     <a
       href={!(href === "") ? href : undefined}
@@ -14,7 +14,11 @@ export const Skill = ({ name, file, type, href = "", drag=null }) => {
         animate={{ opacity: 1 }}
         drag={drag != null}
         dragConstraints={drag}
-        dragTransition={{ bounceStiffness: 200, bounceDamping: 50, dragElastic: 0.1 }}
+        dragTransition={{
+          bounceStiffness: 200,
+          bounceDamping: 50,
+          dragElastic: 0.1,
+        }}
         dragSnapToOrigin={true}
         transition={{ duration: 0.075 }}
       >

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }) => {
+export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }: any) => {
   return (
     <motion.div
       className="w-full p-0 m-0 transition select-none"

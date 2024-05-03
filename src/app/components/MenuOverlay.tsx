@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 
-const MenuOverlay = ({ links, action }) => {
+const MenuOverlay = ({ links, action }: any) => {
   const route = usePathname();
   return (
     <motion.ul
@@ -13,7 +13,7 @@ const MenuOverlay = ({ links, action }) => {
       animate={{ height: "100vh" }}
       transition={{ duration: 0.2 }}
     >
-      {links.map((link, index) => (
+      {links.map((link: any, index: any) => (
         <motion.li
           key={index}
           className="my-[5vh] text-xl"
