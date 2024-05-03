@@ -88,7 +88,7 @@ export const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
 
-  const handleTabChange = (id) => {
+  const handleTabChange = (id: any) => {
     startTransition(() => {
       setTab(id);
     });
@@ -136,7 +136,7 @@ export const AboutSection = () => {
               Certificates{" "}
             </TabButton>
           </div>
-          <div className="min-h-96">{TAB_DATA.find((t) => t.id === tab).content}</div>
+          <div className="min-h-96">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
         </div>
       </motion.div>
     </section>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const Article = ({ post }) => {
+export const Article = ({ post }: any) => {
   return (
     <div className="max-w-5xl xl:max-w-7xl xl:grid xl:grid-cols-[2fr_1fr] gap-12 mt-12 mb-24">
       <aside className="mb-12 xl:order-2">
@@ -61,4 +61,4 @@ export const Article = ({ post }) => {
       </article>
     </div>
   );
-}
+};

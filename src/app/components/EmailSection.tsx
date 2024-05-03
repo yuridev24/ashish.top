@@ -10,7 +10,7 @@ import {motion} from "framer-motion";
 export const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-   async function handleSubmit(e) {
+   async function handleSubmit(e: any) {
      e.preventDefault();
      setIsButtonDisabled(true);
      const response = await fetch("https://api.web3forms.com/submit", {

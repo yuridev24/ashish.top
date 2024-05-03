@@ -5,14 +5,14 @@ import {ArrowDownTrayIcon} from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const BooksCard = ({ cover, name, desc, preview, buy }) => {
+export const BooksCard = ({ cover, name, desc, preview, buy }: any) => {
   return (
     <motion.div
       className="p-0 m-0 transition w-full select-none"
       initial={{ scale: "0" }}
       animate={{ scale: "1" }}
       whileHover={{ scale: "1.05" }}
-      whileTap={{scale: "0.97"}}
+      whileTap={{ scale: "0.97" }}
       transition={{ duration: 0.1 }}
     >
       <Link
