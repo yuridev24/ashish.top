@@ -9,7 +9,7 @@ import { Guest } from "./Guest";
 const loadingLoop = 3;
 
 export const Guestbook = () => {
-  const [messages, setMessages] = useState<any[]>([]);
+   const [messages, setMessages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Guestbook = () => {
   }, []);
 
   const handleSignSubmit = (newMessage: any) => {
-    setMessages((prevMessages: any) => [newMessage, ...prevMessages]);
+    setMessages((messages) => [newMessage, ...messages]);
   };
 
   return (
