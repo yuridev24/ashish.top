@@ -4,29 +4,39 @@ import { NewsLetter } from "../components/NewsLetter";
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
-  return slugs.map((slug) => ({
+  return slugs.map((slug: any) => ({
     postSlug: slug,
   }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: any) {
   const post = await getPostBySlug(params.postSlug);
   return {
     title: `${post.title} - Ashish Agarwal`,
-    description:
-      post.subtitle || `Read ${post.title} on Ashish Agarwal's Blog`,
+    description: post.subtitle || `Read ${post.title} on Ashish Agarwal's Blog`,
     openGraph: {
-      type: 'article',
+      type: "article",
       article: {
         publishedTime: post.publishedAt,
         modifiedTime: post.updatedAt,
-        authors: ['Ashish Agarwal'],
-        tags: ["programming", "coding", 'web dev', "ashish", "computer", "nextjs", "react", "framer motion", "tailwindcss", "developer"],
+        authors: ["Ashish Agarwal"],
+        tags: [
+          "programming",
+          "coding",
+          "web dev",
+          "ashish",
+          "computer",
+          "nextjs",
+          "react",
+          "framer motion",
+          "tailwindcss",
+          "developer",
+        ],
       },
       twitter: {
-        card: 'summary_large_image',
-        site: '@ashishgr2024',
-        creator: '@ashishgr2024',
+        card: "summary_large_image",
+        site: "@ashishgr2024",
+        creator: "@ashishgr2024",
       },
       linkedin: {
         title: `${post.title} - Ashish Agarwal`,
@@ -45,7 +55,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function Post({ params }) {
+export default async function Post({ params }: any) {
   const post = await getPostBySlug(params.postSlug);
   return (
     <>
