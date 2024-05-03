@@ -84,7 +84,7 @@ export const NewsLetter = () => {
                 </div>
               </div>
               <p className="text-red-500 pt-2 justify-center flex flex-row">
-                {errors.email?.message || ""}
+                {(errors.email?.message || "").toString()}
               </p>
               <div className="px-2 grow flex mt-3">
                 <button
