@@ -14,11 +14,6 @@ export const Skill = ({ name, file, type, href = "", drag = null }: any) => {
         animate={{ opacity: 1 }}
         drag={drag != null}
         dragConstraints={drag}
-        dragTransition={{
-          bounceStiffness: 200,
-          bounceDamping: 50,
-          dragElastic: 0.1,
-        }}
         dragSnapToOrigin={true}
         transition={{ duration: 0.075 }}
       >
