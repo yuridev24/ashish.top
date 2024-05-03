@@ -10,7 +10,7 @@ import { Guest } from "./Guest";
 const loadingLoop = 3;
 
 export const Guestbook = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
