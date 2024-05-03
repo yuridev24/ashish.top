@@ -1,5 +1,5 @@
 import "./globals.css";
-import { inter } from "./fonts.ts";
+import { inter } from "./fonts";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import { ScrollTop } from "./components/ScrollTop";
