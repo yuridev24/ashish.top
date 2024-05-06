@@ -1,7 +1,3 @@
-<script>
-  alert("hello");
-</script>
-
 <p>
   <a href="https://ashishagr.vercel.app">
     <h1>My Next.js Portfolio</h1>
