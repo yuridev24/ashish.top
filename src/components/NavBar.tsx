@@ -6,7 +6,7 @@ import GithubIcon from "/public/github-icon.svg";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import { poppins } from "../fonts";
+import { poppins } from "@/app/fonts";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
