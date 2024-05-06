@@ -1,5 +1,4 @@
-import Link from "next/link";
-import React from "react";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
 
 const currentYear = new Date().getFullYear();
 const links = [

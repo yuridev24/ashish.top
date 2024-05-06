@@ -1,5 +1,5 @@
-import Link from "next/link";
-import {motion} from "framer-motion";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
+import { motion } from "framer-motion";
 
 const NavLink = ({ href, title, onClick, active }: any) => {
   return (
@@ -19,7 +19,7 @@ const NavLink = ({ href, title, onClick, active }: any) => {
             ? " text-blue-400 hover:text-blue-400"
             : "text-[#ADB7BE] hover:text-white")
         }
-        onClick={onClick}
+        onClickAction={onClick}
       >
         {title}
       </Link>

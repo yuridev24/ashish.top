@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { ScrollTop } from "@/components/ScrollTop";
 
+import { ProgressBar } from "@/components/ProgressBar";
+
 export const metadata: any = {
   title: "Ashish Agarwal",
   description:
@@ -43,12 +45,16 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex min-h-screen flex-col bg-dark-950">
-          <NavBar />
-          <div className="container mx-auto py-4 px-12 mt-28 md:mt-24">{children}</div>
-          <Footer />
-          <ScrollTop />
-        </main>
+        <ProgressBar className="fixed h-1 bg-primary-800 top-0 z-[999]">
+          <main className="flex min-h-screen flex-col bg-dark-950">
+            <NavBar />
+            <div className="container mx-auto py-4 px-12 mt-28 md:mt-24">
+              {children}
+            </div>
+            <Footer />
+            <ScrollTop />
+          </main>
+        </ProgressBar>
       </body>
     </html>
   );

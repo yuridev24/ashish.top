@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
 import { useState } from "react";
 
 export const Post = ({ imgUrl, title, url, index, desc, date }: any) => {

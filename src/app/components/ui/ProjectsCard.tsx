@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
 
 export const ProjectsCard = ({ imgUrl, title, desc, gitUrl, previewUrl }: any) => {
   return (

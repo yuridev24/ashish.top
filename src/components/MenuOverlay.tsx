@@ -24,7 +24,7 @@ const MenuOverlay = ({ links, action }: any) => {
           <NavLink
             href={link.path}
             title={link.title}
-            onClick={action}
+            onClickAction={action}
             active={route === link.path}
           />
         </motion.li>
@@ -33,7 +33,7 @@ const MenuOverlay = ({ links, action }: any) => {
         <NavLink
           href={"https://github.com/ashishagarwal2023"}
           title={"GitHub"}
-          onClick={action}
+          onClickAction={action}
           active={false}
         />
       </motion.li>

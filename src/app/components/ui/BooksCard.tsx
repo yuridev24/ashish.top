@@ -2,7 +2,7 @@
 
 import { BookOpenIcon } from "@heroicons/react/24/outline";
 import {ArrowDownTrayIcon} from "@heroicons/react/16/solid";
-import Link from "next/link";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
 import { motion } from "framer-motion";
 
 export const BooksCard = ({ cover, name, desc, preview, buy }: any) => {

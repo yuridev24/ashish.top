@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { ProgressBarLink as Link } from "@/components/ProgressBar";
 import Image from "next/image";
 import GithubIcon from "/public/github-icon.svg";
 import { CogIcon } from "@heroicons/react/24/outline";

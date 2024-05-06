@@ -31,7 +31,7 @@ export const ScrollTop = () => {
 
   return (
     <div
-      className={`transition duration-200 opacity-full pointer-events-auto fixed bottom-0 z-[10] flex w-full p-10 ${
+      className={`transition duration-200 opacity-full pointer-events-auto fixed bottom-0 z-[10] flex right-0 p-10 ${
         showScrollTop ? "" : "opacity-0"
       }`}
       onClick={handleScrollTop}
