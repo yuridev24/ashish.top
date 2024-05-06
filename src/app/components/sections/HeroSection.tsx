@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {SkillLogo} from "@/app/components/SkillLogo";
+import { SkillLogo } from "@/app/components/ui/SkillLogo";
 
 const HeroSection = () => {
   return (

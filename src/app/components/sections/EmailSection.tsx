@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import GithubIcon from "../../../public/github-icon.svg";
+import GithubIcon from "/public/github-icon.svg";
 import { CogIcon } from "@heroicons/react/24/outline";
 import {motion} from "framer-motion";
 

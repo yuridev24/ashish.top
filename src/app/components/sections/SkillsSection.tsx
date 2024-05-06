@@ -1,6 +1,6 @@
 "use client";
 
-import { Skill } from "./Skill";
+import { Skill } from "@/app/components/ui/Skill";
 
 export const SkillsSection = () => {
   const skills = [

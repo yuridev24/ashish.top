@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { addDoc, collection, getFirestore, query, where, getDocs } from "firebase/firestore";
-import firebaseApp from "../../../lib/firebase";
+import firebaseApp from "@/lib/firebase";
 
-import getGithubData from "../../../lib/getGithubData";
+import getGithubData from "@/lib/getGithubData";
 
 import { getToken } from "next-auth/jwt";
 

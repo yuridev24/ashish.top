@@ -2,9 +2,9 @@
 
 import { useTransition, useState } from "react";
 import Image from "next/image";
-import { TabButton } from "./TabButton";
+import { TabButton } from "@/app/components/ui/TabButton";
 import { motion } from "framer-motion";
-import { Skill } from "./Skill";
+import { Skill } from "@/app/components/ui/Skill";
 
 const skills = [
   "Node.js",

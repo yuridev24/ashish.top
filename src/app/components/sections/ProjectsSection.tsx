@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { ProjectTag } from "./ProjectTag";
+import { ProjectTag } from "@/app/components/ui/ProjectTag";
 import { motion, useInView } from "framer-motion";
-import { ProjectsCard } from "./ProjectsCard";
+import { ProjectsCard } from "@/app/components/ui/ProjectsCard";
 
 const projectTags = ["All", "Web", "Back-end", "API"];
 

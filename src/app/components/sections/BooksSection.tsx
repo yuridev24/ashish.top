@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { BookTag } from "./BookTag";
+import { BookTag } from "@/app/components/ui/BookTag";
 import { motion, useInView } from "framer-motion";
-import { BooksCard } from "./BooksCard";
+import { BooksCard } from "@/app/components/ui/BooksCard";
 
 const bookTags = [
   "All",
