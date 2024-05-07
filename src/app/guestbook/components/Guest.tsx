@@ -27,8 +27,6 @@ const parseTime = (timestamp: number) => {
     return `${hours} hours ago`;
   } else if (days === 1) {
     return "A day ago";
-    } else if (days === 1) {
-      return "A day ago";
     } else if (days <= 6) {
       return `${days} days ago`;
     } else if (days <= 13) {

@@ -2,22 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior: smooth;
-}
-body{
-    @apply bg-black text-white overflow-x-hidden;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
 }
 
-::selection{
-    background-color: rgb(214, 93, 0);
-    color: white;
+@layer base {
+  * {
+    @apply border-border;
+  }
 }
 
-img, svg, i, header, nav, footer, button{
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-black text-white overflow-x-hidden;
+}
+
+::selection {
+  background-color: rgb(214, 93, 0);
+  color: white;
+}
+
+img,
+svg,
+i,
+header,
+nav,
+footer,
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .article_contents h2,
@@ -31,20 +77,21 @@ img, svg, i, header, nav, footer, button{
 .article_contents h6,
 .article_contents ul,
 .article_contents ol,
-.article_contents h1{
-    color: white;
+.article_contents h1 {
+  color: white;
 }
 .article_contents a {
-    color: steelblue;
-    transition: color 0.1s ease-in-out;
+  color: steelblue;
+  transition: color 0.1s ease-in-out;
 }
 
 .article_contents a:hover {
-    color: dodgerblue;
+  color: dodgerblue;
 }
-.article_contents code::before, .article_contents code::after{
-    content: "";
+.article_contents code::before,
+.article_contents code::after {
+  content: "";
 }
-.tag{
-    @apply bg-primary-700 even:bg-primary-800 select-none text-white px-2 py-1 rounded-md cursor-pointer transition duration-100 scale-100 hover:scale-105 active:scale-95;
+.tag {
+  @apply bg-primary-700 even:bg-primary-800 select-none text-white px-2 py-1 rounded-md cursor-pointer transition duration-100 scale-100 hover:scale-105 active:scale-95;
 }

@@ -47,10 +47,10 @@ export const NewsLetter = () => {
 
   return (
     <header className="flex flex-col justify-center items-center py-4">
-      <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
+      <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-white font-extrabold">
         Subscribe to newsletter
       </h1>
-      <p className="text-lg text-slate-700 dark:text-slate-400">
+      <p className="text-lg text-slate-400">
         All the blog news straight to your box!
       </p>
       <section className="mt-3 max-w-md sm:mx-auto sm:px-4">
@@ -66,12 +66,12 @@ export const NewsLetter = () => {
                 <div className="group relative">
                   <img
                     src="/images/icons/email.svg"
-                    className="w-6 h-full absolute inset-y-0 left-3 text-slate-400 pointer-events-none group-focus-within:text-primary-500 dark:group-focus-within:text-slate-400"
+                    className="w-6 h-full absolute inset-y-0 left-3 text-slate-400 pointer-events-none group-focus-within:text-slate-400"
                   />
                   <input
                     type="email"
                     autoComplete="off"
-                    className="shadow rounded-md ring-1 ring-slate-900/5 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white dark:bg-slate-700/20 dark:ring-slate-200/20 dark:focus:ring-primary-500 dark:text-white"
+                    className="shadow rounded-md ring-1 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full focus:outline-none focus:ring-2 bg-slate-700/20 ring-slate-200/20 focus:ring-primary-500 text-white"
                     placeholder="hello@ashishagr.is-a.dev"
                     {...register("email", {
                       required: "Email is required",
@@ -90,7 +90,7 @@ export const NewsLetter = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-primary-500 flex-auto shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-primary-600 dark:hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-300 dark:focus:ring-offset-slate-900 dark:focus:ring-primary-700"
+                  className="bg-primary-500 flex-auto shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-primary-700"
                 >
                   Subscribe
                 </button>
