@@ -10,7 +10,7 @@ const mediaVideos = [
 
 const mediaLinks = [
   {
-    title: "1 साल के 'कंप्यूटर बॉय' ने बनाया ई वोटिंग सिस्टम",
+    title: "11 साल के 'कंप्यूटर बॉय' ने बनाया ई वोटिंग सिस्टम",
     url: "https://www.amarujala.com/uttar-pradesh/aligarh/aligarh-computer-boy-ashish-aggarwal-e-voting-system-2024-04-15?pageId=2",
     channel: "Amar Ujala Uttar Pradesh",
   },
