@@ -7,7 +7,7 @@ export default function Intro() {
         About me
       </h1>
       <p className="text-lg text-white mb-4">
-        First of all, hi there. If you're new here, let me introduce myself
+        First of all, hi there. If you&apos;re new here, let me introduce myself
         first. My name is{" "}
         <span className="border-b border-b-white hover:border-b-2 cursor-pointer select-none">
           Ashish Agarwal
@@ -38,18 +38,28 @@ export default function Intro() {
         skills.
       </p>
       <p className="text-lg text-slate-200 mb-4">
-        One special thing, I'm also a{" "}
+        One special thing, I&apos;m also a{" "}
         <span className="border-b border-b-cyan-500 hover:border-b-2 cursor-pointer select-none">
           book author
         </span>
-        ! I've authored over 9 books, all about programming. You can find my
-        books{" "}
+        ! I&apos;ve authored over 9 books, all about programming. You can find
+        my books{" "}
         <a
-        target="_blank"
+          target="_blank"
           href="https://www.google.co.in/search?sca_esv=f42f57a008774f06&sca_upv=1&hl=en&sxsrf=ADLYWILtOfgZxxmtwH2Z2JgoP2K9TVTC-w:1715355177685&q=Ashish+Agarwal&stick=H4sIAAAAAAAAAONgVuLVT9c3NCwoMyhPKy8wfcRowS3w8sc9YSn9SWtOXmPU5OIKzsgvd80rySypFJLmYoOyBKX4uVB18ixi5XMszsgszlBwTE8sKk_MAQDnxTDmXQAAAA&sa=X&ved=2ahUKEwjUm46AtIOGAxXR2DgGHbuuCSMQy_sGegQIERAG#wptab=si:ACC90nzV8JP_zaHhcn0hzH6XuXM5S5ge7Yr9tDbBfB2Ch1QiWrFn8FqIWwehILJ3EpDSoXC6vqCITrXaTzD-iZSb9oyZOlF_1TGWo4pqUm-t-slCoOl-anJNlDvPwy0MSJWu5W9dc3wSL4QquPd5kICTnadGLhH65g%3D%3D"
           className="border-b border-b-blue-500 hover:border-b-2 cursor-pointer select-none hover:bg-blue-500 hover:text-white transition duration-75"
-        >Google</a> or on the <ProgressBarLink className="border-b border-b-blue-400 hover:border-b-2 cursor-pointer select-none" href="/">home</ProgressBarLink> page.
-      </p>      
+        >
+          Google
+        </a>{" "}
+        or on the{" "}
+        <ProgressBarLink
+          className="border-b border-b-blue-400 hover:border-b-2 cursor-pointer select-none"
+          href="/"
+        >
+          home
+        </ProgressBarLink>{" "}
+        page.
+      </p>
     </>
   );
 }

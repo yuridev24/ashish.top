@@ -92,7 +92,7 @@ export default function Skills() {
         Skills and Certificates
       </h2>
       <p className="text-lg text-slate-100 mb-4">
-        Here's the list of my skills:
+        Here&apos;s the list of my skills:
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-3">
         {skills.map((skill, index) => (

@@ -4,7 +4,7 @@ export default function Certs() {
   return (
     <>
       <p className="text-lg text-slate-100 mb-4">
-        Here's a list of the{" "}
+        Here&apos;s a list of the{" "}
         <span className="border-b border-b-orange-400 hover:border-b-2 cursor-pointer select-none">
           Professional Certificates
         </span>{" "}
