@@ -17,9 +17,15 @@ const HeroSection = () => {
           className="col-span-8 place-self-center text-center justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl lg:leading-base sm:text-5xl lg:text-8xl font-extrabold">
-            <span className="md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m
-            </span>
+              <TypeAnimation
+                sequence={[
+                  "Hello, I'm"
+                ]}
+                className="md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600"
+              speed={40}
+              wrapper="span"
+                repeat={1}
+              />
             <br />
             <motion.span
               initial={{ opacity: 0 }}
@@ -31,6 +37,8 @@ const HeroSection = () => {
                   "Ashish Agarwal",
                   2000,
                   "Web Developer",
+                  1250,
+                  "Book Author",
                   1250,
                   "Programmer",
                   1250,
@@ -48,20 +56,20 @@ const HeroSection = () => {
                   1250,
                 ]}
                 wrapper="span"
-                speed={50}
+                speed={70}
                 repeat={Infinity}
               />
             </motion.span>
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-4">
-            Open-source freelancer, programmer from{" "}
+            Passionate programmer from{" "}
             <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">
               India
             </span>
-            . Lot knowledge in languages like JavaScript, Python, R, SQL, HTML,
-            CSS & Node.js. Experienced with frameworks like Next.js, Django and
-            Flask. With knowledge of libraries like Bootstrap, TailwindCSS and
-            jQuery and tools like Git, Prettier, and a lot more & increasing.
+            . Young book author, data scientist, data analyst and primarily, a
+            front-end web developer. I love building interactive and responsive
+            web applicatiosn with React. Interviewed by several news reporters
+            and known in many newspapers, the computer boy from India!
           </p>
           <div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
             <SkillLogo path={"javascript.png"} language={"JavaScript"} />

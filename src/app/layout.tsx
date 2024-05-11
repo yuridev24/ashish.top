@@ -45,7 +45,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ProgressBar className="fixed h-1 bg-primary-500 dark:bg-primary-800 top-0 z-[999]">
+        <ProgressBar className="fixed h-1 bg-primary-500 dark:bg-primary-700 top-0 z-[999]">
           <main className="flex min-h-screen flex-col bg-dark-950">
             <NavBar />
             <div className="container mx-auto py-4 px-12 mt-16 md:mt-20">

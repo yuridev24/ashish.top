@@ -107,8 +107,8 @@ const booksData = [
 
 export const BooksSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [tag, setTag] = useState("All");
+  const isInView = useInView(ref, { once: false });
+  const [tag, setTag] = useState<string>("All");
 
   const handleTagChange = (newTag: any) => {
     setTag(newTag);
