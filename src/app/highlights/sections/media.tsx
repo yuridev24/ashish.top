@@ -47,7 +47,7 @@ const mediaLinks = [
     title:
       "Inspirational Story: आपदा काल सीखा कम्प्यूटर ज्ञान, 11 साल की उम्र में प्रोग्रामिंग पर पांच किताबें लिख डाली",
     url: "https://www.jagran.com/uttar-pradesh/aligarh-city-inspiration-story-computer-boy-aashish-wrote-five-books-on-programming-by-age-of11-23514480.html",
-    channel: "Dainik Jagran",
+    channel: "Danik Jagran",
   },
   {
     title:

@@ -8,7 +8,7 @@ import { BooksSection } from "@/app/components/sections/BooksSection";
 
 export default function Home() {
   return (
-    <>
+    <div className="pt-16 md:pt-10">
       <HeroSection />
       <AchievementsSection />
       <AboutSection />
@@ -16,6 +16,6 @@ export default function Home() {
       <BooksSection />
       <ProjectsSection />
       <EmailSection />
-    </>
+    </div>
   );
 }

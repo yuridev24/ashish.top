@@ -2,7 +2,6 @@
 
 import Certs from "./sections/certs";
 import Intro from "./sections/intro";
-import Media from "./sections/media";
 import Skills from "./sections/skills";
 
 const aboutpage: any = () => {
@@ -11,8 +10,9 @@ const aboutpage: any = () => {
       <Intro />
       <Skills />
       <Certs />
-      <Media />
-
+      <p className="text-lg text-slate-100 mb-4">
+        Can you check out the highlights page? It shows most (but not all :P) of my interviews!
+      </p>
       <p className="mt-6 text-slate-500">More content to be added soon. Stay tuned!</p>
     </div>
   );
