@@ -8,7 +8,11 @@ const links = [
   },
   {
     title: "About",
-    path: "/about"
+    path: "/about",
+  },
+  {
+    title: "Highlights",
+    path: "/highlights",
   },
   {
     title: "Blog",
