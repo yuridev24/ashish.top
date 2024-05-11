@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss"
 const colors = require("tailwindcss/colors")
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "media",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",

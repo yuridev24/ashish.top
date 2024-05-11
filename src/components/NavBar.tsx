@@ -65,7 +65,7 @@ export const NavBar = () => {
         <div
           className={
             `transition-padding flex container flex-wrap items-center justify-between mx-auto px-4 py-2 ` +
-            (navbarTop ? "lg:py-4" : "lg:py-6 lg:px-6")
+            (navbarTop ? "md:py-4" : "md:py-6 md:px-6")
           }
         >
           <ProgressBarLink
