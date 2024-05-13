@@ -118,7 +118,7 @@ export const AboutSection = () => {
             Node.js, HTML, CSS, Python, Git and more frameworks, languages and
             libraries. I am a quick learner and I am always looking to expand my
             knowledge and skill set. I work as a freelancer and open-source. As
-            well as, I'm a young book author too!
+            well as, I&apos;m a young book author too!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
