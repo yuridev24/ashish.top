@@ -96,8 +96,8 @@ export const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
         <div className="overflow-hidden h-min rounded-md">
@@ -113,11 +113,12 @@ export const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-4 ">About Me</h2>
           <p className="text-base lg:text-lg">
             Hi, I&apos;m a front-end developer with a passion for creating
-            interactive and responsive web applications as well as a back-end developer. I have experience
-            working with JavaScript, React, Node.js, HTML, CSS, Python, Git and
-            more frameworks, languages and libraries. I am a quick learner and I
-            am always looking to expand my knowledge and skill set. I work as a
-            freelancer and open-source. As well as, I'm a young book author too!
+            interactive and responsive web applications as well as a back-end
+            developer. I have experience working with JavaScript, React,
+            Node.js, HTML, CSS, Python, Git and more frameworks, languages and
+            libraries. I am a quick learner and I am always looking to expand my
+            knowledge and skill set. I work as a freelancer and open-source. As
+            well as, I'm a young book author too!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -135,7 +136,9 @@ export const AboutSection = () => {
               Certificates{" "}
             </TabButton>
           </div>
-          <div className="min-h-96">{TAB_DATA.find((t) => t.id === tab)?.content}</div>
+          <div className="min-h-96">
+            {TAB_DATA.find((t) => t.id === tab)?.content}
+          </div>
         </div>
       </motion.div>
     </section>

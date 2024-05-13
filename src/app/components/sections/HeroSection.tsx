@@ -11,8 +11,8 @@ const HeroSection = () => {
     <section className="min-h-screen py-8 pb-4 pt-16 lg:pt-8" id="home">
       <div className="flex flex-row justify-center h-[50vh]">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center justify-self-start"
         >
@@ -82,8 +82,8 @@ const HeroSection = () => {
           </div>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
-            animate={{ x: 0, opacity: 100 }}
-            transition={{ duration: 0.5 }}
+            whileInView={{ x: 0, opacity: 100 }}
+            transition={{ duration: 0.4 }}
           >
             <Link href="/resume.pdf">
               {" "}
