@@ -9,6 +9,26 @@ const projectTags = ["All", "Web", "Back-end", "API"];
 
 const projectsData = [
   {
+    id: 7,
+    title: "ChatGPT Clone",
+    description:
+      "A ChatGPT chat interface UI clone with my own FreeGPT.js, a library to use ChatGPT for free!",
+    image: "/images/projects/7.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/ashishagarwal2023/chatgpt-clone",
+    previewUrl: "http://ashishagarwal.is-a.dev/chatgpt-clone/",
+  },
+  {
+    id: 6,
+    title: "Google.com UI Clone",
+    description:
+      "A design of Google.com purely in TailwindCSS. A little functionallity to auth with google as well as for your custom profile picture!",
+    image: "/images/projects/6.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/ashishagarwal2023/google-clone",
+    previewUrl: "https://google-clone-ashish.vercel.app/",
+  },
+  {
     id: 1,
     title: "React Portfolio Website",
     description:
