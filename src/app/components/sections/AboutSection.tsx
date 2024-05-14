@@ -100,20 +100,26 @@ export const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <motion.div
-      ref={ref}
+        ref={ref}
         initial={{ opacity: 0, y: 20 }}
         whileInView={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{delay: (inView ? 0.5: 0)}}
+        transition={{ delay: inView ? 0.5 : 0 }}
         className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
         <div className="overflow-hidden h-min rounded-md">
-          <Image
+          {/* <Image
             src="/images/about-image.png"
             width={500}
             alt="About Me Image"
             height={500}
             className="rounded-lg transition hover:scale-105"
-          />
+          /> */}
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            src="https://www.youtube.com/embed/oOjwzJX6Jxc?si=rvO2gZN1KCRgUNGS"
+            className="rounded-lg transition hover:scale-105 w-[500px] h-[500px]"
+          ></iframe>
         </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full w-full overflow-auto">
           <h2 className="text-4xl font-bold text-white mb-4 ">About Me</h2>
@@ -124,7 +130,7 @@ export const AboutSection = () => {
             Node.js, HTML, CSS, Python, Git and more frameworks, languages and
             libraries. I am a quick learner and I am always looking to expand my
             knowledge and skill set. I work as a freelancer and open-source. As
-            well as, I&apos;m a young book author too!
+            well as, I&apos;m a young book author too! <strong>I&apos;m just 12 years old with this lot knowldge!</strong>
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton

@@ -67,7 +67,7 @@ const HeroSection = () => {
             className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: (inView ? 0.75: 0) }}
+            transition={{ duration: 0.3 }}
           >
             Passionate programmer from{" "}
             <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">
