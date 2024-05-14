@@ -64,7 +64,7 @@ const HeroSection = () => {
             </motion.span>
           </h1>
           <motion.p
-            className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-4"
+            className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
