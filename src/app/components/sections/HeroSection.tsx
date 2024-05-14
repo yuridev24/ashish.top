@@ -2,35 +2,37 @@
 
 import { TypeAnimation } from "react-type-animation";
 import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { SkillLogo } from "@/app/components/ui/SkillLogo";
 import Link from "next/link";
+import { useRef } from "react";
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
   return (
     <section className="min-h-screen py-8 pb-4 pt-16 lg:pt-8" id="home">
       <div className="flex flex-row justify-center h-[50vh]">
         <motion.div
+          ref={ref}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="col-span-8 place-self-center text-center justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl lg:leading-base sm:text-5xl lg:text-8xl font-extrabold">
-              <TypeAnimation
-                sequence={[
-                  "Hello, I'm"
-                ]}
-                className="md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600"
+            <TypeAnimation
+              sequence={["Hello, I'm"]}
+              className="md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600"
               speed={40}
               wrapper="span"
-                repeat={1}
-              />
+              repeat={1}
+            />
             <br />
             <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: (inView ? 0.7 : 0) }}
             >
               <TypeAnimation
                 sequence={[
@@ -61,17 +63,32 @@ const HeroSection = () => {
               />
             </motion.span>
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-4">
+          <motion.p
+            className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6 font-[400] w-full px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: (inView ? 0.75: 0) }}
+          >
             Passionate programmer from{" "}
             <span className="bg-gradient-to-r from-orange-400 via-white to-green-400 bg-clip-text text-transparent">
               India
             </span>
-            . Young book author, data scientist, data analyst and primarily, a
+            .{" "}
+            <TypeAnimation
+              sequence={[
+                `Young book author, data scientist, data analyst and primarily, a
             front-end web developer. I love building interactive and responsive
             web applicatiosn with React. Interviewed by several news reporters
-            and known in many newspapers, the computer boy from India!
-          </p>
-          <div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none">
+            and known in many newspapers, the computer boy from India!`,
+              ]}
+              speed={40}
+              repeat={1}
+            />
+          </motion.p>
+          <motion.div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none"
+             initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            transition={{ duration: 0.1, delay: (inView ? 3 : 0) }}>
             <SkillLogo path={"javascript.png"} language={"JavaScript"} />
             <SkillLogo path={"typescript.png"} language={"TypeScript"} />
             <SkillLogo path={"react.png"} language={"React"} />
@@ -79,7 +96,7 @@ const HeroSection = () => {
             <SkillLogo path={"svelte.png"} language={"Svelte"} />
             <SkillLogo path={"git.png"} language={"Git"} />
             <SkillLogo path={"tailwindcss.png"} language={"Tailwind CSS"} />
-          </div>
+          </motion.div>
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 100 }}

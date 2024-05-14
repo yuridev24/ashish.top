@@ -1,9 +1,9 @@
 "use client";
 
-import { useTransition, useState } from "react";
+import { useTransition, useState, useRef } from "react";
 import Image from "next/image";
 import { TabButton } from "@/app/components/ui/TabButton";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Skill } from "@/app/components/ui/Skill";
 
 const skills = [
@@ -93,11 +93,17 @@ export const AboutSection = () => {
       setTab(id);
     });
   };
+
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <section className="text-white" id="about">
       <motion.div
+      ref={ref}
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileInView={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{delay: (inView ? 0.5: 0)}}
         className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
         <div className="overflow-hidden h-min rounded-md">
