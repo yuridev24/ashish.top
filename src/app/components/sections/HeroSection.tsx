@@ -1,6 +1,7 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
+import WordRotate from "@/components/ui/wordrotate";
 import { ArrowDownTrayIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion, useInView } from "framer-motion";
 import { SkillLogo } from "@/app/components/ui/SkillLogo";
@@ -32,34 +33,22 @@ const HeroSection = () => {
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: (inView ? 0.7 : 0) }}
+              transition={{ duration: 0.3, delay: inView ? 0.7 : 0 }}
             >
-              <TypeAnimation
-                sequence={[
+              <WordRotate
+                className="text-white text-4xl lg:leading-base sm:text-5xl lg:text-8xl font-extrabold"
+                words={[
                   "Ashish Agarwal",
-                  2000,
                   "Web Developer",
-                  1250,
                   "Book Author",
-                  1250,
                   "Programmer",
-                  1250,
                   "Free-lancer",
-                  1250,
                   "Open-sourcer",
-                  1250,
                   "Front-end Developer",
-                  1250,
                   "Back-end Developer",
-                  1250,
                   "UI/UX Designer",
-                  1250,
                   "From India",
-                  1250,
                 ]}
-                wrapper="span"
-                speed={70}
-                repeat={Infinity}
               />
             </motion.span>
           </h1>
@@ -85,10 +74,12 @@ const HeroSection = () => {
               repeat={1}
             />
           </motion.p>
-          <motion.div className="justify-center flex flex-row my-4 pb-2 gap-2 select-none"
-             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
-            transition={{ duration: 0.1, delay: (inView ? 3 : 0) }}>
+          <motion.div
+            className="justify-center flex flex-row my-4 pb-2 gap-2 select-none"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.1, delay: inView ? 3 : 0 }}
+          >
             <SkillLogo path={"javascript.png"} language={"JavaScript"} />
             <SkillLogo path={"typescript.png"} language={"TypeScript"} />
             <SkillLogo path={"react.png"} language={"React"} />

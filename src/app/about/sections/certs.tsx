@@ -16,6 +16,7 @@ export default function Certs() {
           href="https://www.credly.com/badges/824989ca-1c6d-419e-98c9-1b9c0369b3b4/public_url"
           file="gaiessentials.png"
           type="Professional Certificate"
+          hover={false}
         />
         <Skill
           name="Google Data Analytics"
