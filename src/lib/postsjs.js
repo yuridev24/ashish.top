@@ -1,6 +1,6 @@
-import { query } from "@/lib/hashnode";
+const { query } = require("./hashnodejs.js");
 
-export async function getAllPostSlugs() {
+async function getAllPostSlugs() {
   const {
     data: { user },
   } = await query({
@@ -19,11 +19,11 @@ export async function getAllPostSlugs() {
     `,
     variables: {},
   });
-  const slugs = user?.posts?.edges?.map((edge: any) => edge.node.slug) ?? [];
+  const slugs = user.posts.edges.map((edge) => edge.node.slug) ?? [];
   return slugs;
 }
 
-export async function getPostBySlug(slug: any) {
+async function getPostBySlug(slug) {
   const {
     data: { publication },
   } = await query({
@@ -63,3 +63,5 @@ export async function getPostBySlug(slug: any) {
 
   return post;
 }
+
+module.exports = {getPostBySlug, getAllPostSlugs}

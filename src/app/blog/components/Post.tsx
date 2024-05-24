@@ -1,23 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ProgressBarLink as Link } from "@/components/ProgressBar";
-import { useState } from "react";
 
 export const Post = ({ imgUrl, title, url, index, desc, date }: any) => {
-  const [indexCount, setIndexCount] = useState(index);
-  const handleDone = () => {
-    setIndexCount(0);
-  };
   return (
-    <motion.div
+    <div
       className="w-full p-0 m-0 transition select-none"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 100 }}
-      whileHover={{ scale: "1.02" }}
-      whileTap={{ scale: "0.99" }}
-      onAnimationComplete={handleDone}
-      transition={{ duration: 0.1, delay: indexCount / 8 }}
     >
       <Link
         className="group block w-full bg-dark-700 hover:bg-primary-500 cursor-pointer"
@@ -37,6 +25,6 @@ export const Post = ({ imgUrl, title, url, index, desc, date }: any) => {
           />
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };

@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node ./src/lib/build-search.js && next build",
     "start": "next start",
+    "postbuild": "node ./src/lib/build-search.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -18,9 +19,11 @@
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
+    "algoliasearch": "^4.23.3",
     "autoprefixer": "^10.4.19",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
     "firebase": "^10.11.1",
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.378.0",
@@ -30,6 +33,7 @@
     "react-animated-numbers": "^0.18.0",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
+    "react-instantsearch-dom": "^6.40.4",
     "react-type-animation": "^3.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
@@ -38,6 +42,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-instantsearch-dom": "^6",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
