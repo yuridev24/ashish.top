@@ -5,7 +5,14 @@ import { connectStateResults } from "react-instantsearch-dom";
 function Hits({ searchState, searchResults }: any) {
   return (
     <>
-      {searchResults?.hits.length === 0 && (
+      {searchResults?.hits.length === 0 && searchState.query.trim() !== "" && (
+        <div className="mt-8 mb-4 font-sans gap-4 flex flex-col">
+          <p className="text-center text-xl">
+            No results found for "{searchState.query}"
+          </p>
+        </div>
+      )}
+      {searchResults?.hits.length === 0 && searchState.query.trim() === "" && (
         <Posts />
       )}
       {searchResults?.hits.length > 0 && (
