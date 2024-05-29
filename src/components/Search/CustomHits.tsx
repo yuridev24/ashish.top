@@ -8,7 +8,7 @@ function Hits({ searchState, searchResults }: any) {
       {searchResults?.hits.length === 0 && searchState.query.trim() !== "" && (
         <div className="mt-8 mb-4 font-sans gap-4 flex flex-col">
           <p className="text-center text-xl">
-            No results found for "{searchState.query}"
+            No results found for &quot;{searchState.query}&quot;
           </p>
         </div>
       )}
