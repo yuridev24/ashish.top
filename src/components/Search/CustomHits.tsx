@@ -24,7 +24,7 @@ function Hits({ searchState, searchResults }: any) {
               imgUrl={post.cover}
               title={post.title}
               index={index}
-              date={new Date(post.publishedAt).toLocaleDateString("en-US", {
+              date={new Date(post.published).toLocaleDateString("en-US", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
