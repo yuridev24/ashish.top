@@ -21,6 +21,7 @@ function transformPostsToSearchObjects(posts) {
       subtitle: post.subtitle,
       slug: post.slug,
       cover: post.coverImage.url,
+      published: post.publishedAt
     };
   });
 

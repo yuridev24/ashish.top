@@ -60,6 +60,7 @@ async function getPostBySlug(slug) {
   });
 
   const post = publication?.post ?? null;
+  post.slug = slug;
 
   return post;
 }

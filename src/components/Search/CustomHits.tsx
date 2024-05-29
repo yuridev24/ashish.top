@@ -31,7 +31,7 @@ function Hits({ searchState, searchResults }: any) {
               })}
               desc={post.subtitle}
             />
-          ))}
+          ))} 
         </div>
       )}
     </>
