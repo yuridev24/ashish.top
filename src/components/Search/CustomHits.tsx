@@ -1,5 +1,5 @@
 import { Post } from "@/app/blog/components/Post";
-import { Posts } from "@/app/blog/components/Posts";
+import { PostsWrapper } from "@/app/blog/components/PostsWrapper";
 import { connectStateResults } from "react-instantsearch-dom";
 
 function Hits({ searchState, searchResults }: any) {
@@ -13,7 +13,7 @@ function Hits({ searchState, searchResults }: any) {
         </div>
       )}
       {searchResults?.hits.length === 0 && searchState.query.trim() === "" && (
-        <Posts />
+        <PostsWrapper />
       )}
       {searchResults?.hits.length > 0 && (
         <div className="mt-8 mb-4 font-sans gap-4 flex flex-col">
