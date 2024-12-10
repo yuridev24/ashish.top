@@ -86,6 +86,12 @@ export const AboutSection = () => {
             href="https://www.credly.com/badges/36b52ef9-b4fe-475a-aae1-400452724d07/public_url"
             type="Professional Certificate"
           />
+          <Skill
+            name="Meta Front-End Developer"
+            file="meta-icon.png"
+            href="#"
+            type="Professional Certificate"
+          />
         </ul>
       ),
     },

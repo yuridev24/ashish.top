@@ -9,75 +9,41 @@ const projectTags = ["All", "Web", "Back-end", "API"];
 
 const projectsData = [
   {
-    id: 7,
-    title: "ChatGPT Clone",
+    title: "Next.js Portfolio Website",
     description:
-      "A ChatGPT chat interface UI clone with my own FreeGPT.js, a library to use ChatGPT for free!",
-    image: "/images/projects/7.png",
+      "This is my first project I built with Next.js. With a guestbook, blog and more!",
+    image: "/images/projects/portfolio.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/ashishagarwal2023/chatgpt-clone",
-    previewUrl: "http://ashishagarwal.is-a.dev/chatgpt-clone/",
+    gitUrl: "https://github.com/yuridev24/ashish.top",
+    previewUrl: "https://ashish.top/",
   },
   {
-    id: 6,
+    title: "ClickCrystals Website (Next.js)",
+    description:
+      "A website for a minecraft mod called ClickCrystals purely in Next.js. With framer motion, tailwindCSS, prisma, postgres, and lot more tech!",
+    image: '/images/projects/clickcrystals.png',
+    tag: ['All', 'Web'],
+    gitUrl: "http://github.com/thetrouper/ClickCrystalsXYZ",
+    previewUrl: "https://clickcrystals.xyz"
+  },
+  {
     title: "Google.com UI Clone",
     description:
       "A design of Google.com purely in TailwindCSS. A little functionallity to auth with google as well as for your custom profile picture!",
-    image: "/images/projects/6.png",
+    image: "/images/projects/googleclone.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/ashishagarwal2023/google-clone",
     previewUrl: "https://google-clone-ashish.vercel.app/",
   },
   {
-    id: 1,
-    title: "React Portfolio Website",
+    title: "ChatGPT Clone",
     description:
-      "This is my first project I built with Next.js. I watched a tutorial on youtube for this!",
-    image: "/images/projects/1.png",
+      "A ChatGPT chat interface UI clone with my own FreeGPT.js, a library to use ChatGPT for free!",
+    image: "/images/projects/gptclone.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/ashishagarwal2023/portfolio",
-    previewUrl: "https://ashishagarwal2023.vercel.app/",
-  },
-  {
-    id: 2,
-    title: "FreeGPT.js",
-    description:
-      "A secure, FREE (with no token/auth) API for ChatGPT! Only works on client-side JavaScript...",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web", "Back-end", "API"],
-    gitUrl: "https://github.com/ashishagarwal2023/freegptjs",
-    previewUrl: "https://freegpt.js.org",
-  },
-  {
-    id: 3,
-    title: "CutYourURL",
-    description:
-      "A advanced Bitly URL Shortener Clone with features like custom URL, reCAPTCHA, limited clicks, expire automatically and more! Built with Flask!",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web", "Back-end"],
-    gitUrl: "https://github.com/ashishagarwal2023/CutYourURL",
-    previewUrl: "https://cutyoururl.tech",
-  },
-  {
-    id: 4,
-    title: "Free WindowsActivator",
-    description:
-      "Simple Python Project to activate windows. It still works for 7-11!",
-    image: "/images/projects/4.png",
-    tag: ["All"],
-    gitUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
-    previewUrl: "https://github.com/ashishagarwal2023/WindowsActivator",
-  },
-  {
-    id: 6,
-    title: "CutYourURL Website",
-    description:
-      "A website (is not complete yet) for the CutYourURL Project, in Svelte+TailwindCSS.",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/ashishagarwal2023/CutYourURLWebsite",
-    previewUrl: "https://cutyour-url.netlify.app/",
-  },
+    gitUrl: "https://github.com/ashishagarwal2023/chatgpt-clone",
+    previewUrl: "http://ashishagarwal.is-a.dev/chatgpt-clone/",
+  }
 ];
 
 export const ProjectsSection = () => {
@@ -127,7 +93,7 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.3, delay: index * 0.2 }}
           >
             <ProjectsCard
-              key={project.id}
+              key={index}
               title={project.title}
               desc={project.description}
               imgUrl={project.image}

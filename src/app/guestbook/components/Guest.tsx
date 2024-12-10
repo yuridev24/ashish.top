@@ -123,7 +123,7 @@ export const Guest = ({ message, index }: any) => {
               ~ {getTime(message.time)}
             </span>
           </h2>
-          <p className="text-gray-300">{message.message}</p>
+          <p className="text-gray-300 max-w-xl lg:max-w-3xl xl:max-w-4xl">{message.message}</p>
         </div>
       </div>
     </motion.div>

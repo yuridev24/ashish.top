@@ -32,6 +32,13 @@ export default function Certs() {
           type="Professional Certificate"
           hover={false}
         />
+        <Skill
+          name="Meta Front-End Developer"
+          file="meta-icon.png"
+          href="#"
+          type="Professional Certificate"
+          hover={false}
+        />
       </ul>
     </>
   );

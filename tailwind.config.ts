@@ -27,8 +27,8 @@ const config = {
         "0.1s": "0.1s",
       },
       colors: {
-        primary: colors.green,
-        secondary: colors.orange,
+        primary: colors.blue,
+        secondary: colors.red,
         dark: {
           50: "#f6f7f6",
           100: "#e2e6e1",
