@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node ./src/lib/build-search.js && next build",
+    "build": "next build",
     "start": "next start",
-    "postbuild": "node ./src/lib/build-search.js",
     "lint": "next lint"
   },
   "dependencies": {
