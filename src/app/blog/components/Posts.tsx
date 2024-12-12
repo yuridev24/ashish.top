@@ -1,3 +1,5 @@
+'use client'
+
 import { query } from "@/lib/hashnode";
 import { useState, useEffect } from "react";
 import { Post } from "./Post";
