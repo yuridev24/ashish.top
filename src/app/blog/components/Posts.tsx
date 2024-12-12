@@ -1,12 +1,28 @@
-'use client'
-
-import { query } from '@/lib/hashnode';
-import { useState, useEffect } from 'react';
-
+import { query } from "@/lib/hashnode";
+import { useState, useEffect } from "react";
 import { Post } from "./Post";
 
+interface PostData {
+  publication: {
+    posts: {
+      edges: {
+        node: {
+          coverImage: {
+            url: string;
+          };
+          id: string;
+          slug: string;
+          title: string;
+          subtitle: string;
+          publishedAt: string;
+        };
+      }[];
+    };
+  };
+}
+
 export const Posts = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<PostData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,8 +50,8 @@ export const Posts = () => {
       variables: {
         id: process.env.HASHNODE_HOST_ID
       }
-    }).then((result) => {
-      setData(result.data);
+    }).then((result: any) => {
+      setData(result.data as PostData);
       setLoading(false);
     });
   }, []);
@@ -45,7 +61,7 @@ export const Posts = () => {
   }
   return (
     <div>
-      {data.publication.posts.edges.map((edge) => (
+      {data?.publication?.posts?.edges?.map((edge: any) => (
         <Post key={edge.node.id} post={edge.node} />
       ))}
     </div>
