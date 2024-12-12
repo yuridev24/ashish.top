@@ -2,24 +2,24 @@ const { query } = require("./hashnodejs.js");
 
 async function getAllPostSlugs() {
   const {
-    data: { user },
+    data: { publication },
   } = await query({
     query: `
-      query{
-  user(username: "ashishagarwal") {
-    posts(pageSize: 20, page:1) {
-        edges{
-          node{
-            slug
-          }
+     query Publication($host: ObjectId){
+  publication(id: $host) {
+   	posts(first: 50) {
+      edges{
+        node{
+          slug
         }
+      }
     }
   }
 }
     `,
-    variables: {},
+    variables: {"host": "6617c97b653f6f2168c868d7"},
   });
-  const slugs = user.posts.edges.map((edge) => edge.node.slug) ?? [];
+  const slugs = publication.posts.edges.map((edge) => edge.node.slug) ?? [];
   return slugs;
 }
 
@@ -60,7 +60,9 @@ async function getPostBySlug(slug) {
   });
 
   const post = publication?.post ?? null;
-  post.slug = slug;
+  if(!post){
+    return undefined;
+  }
 
   return post;
 }

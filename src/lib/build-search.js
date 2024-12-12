@@ -9,19 +9,18 @@ async function getAllBlogPosts(){
   const posts = await Promise.all(
     slugs.map((slug) => getPostBySlug(slug))
   );
-  return posts;
+  const filteredPosts = posts.filter(post => typeof post !== "undefined");
+  return filteredPosts;
 };
 
 function transformPostsToSearchObjects(posts) {
   const transformed = posts.map((post) => {
+    console.log(`${post.title} - ${post.id}`);
     return {
       objectID: post.id,
-      content: post.content.html,
       title: post.title,
       subtitle: post.subtitle,
       slug: post.slug,
-      cover: post.coverImage.url,
-      published: post.publishedAt
     };
   });
 
