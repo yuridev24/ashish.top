@@ -15,10 +15,6 @@ const links = [
     path: "/highlights",
   },
   {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
     title: "Guestbook",
     path: "/guestbook",
   },
